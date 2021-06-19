@@ -1,0 +1,86 @@
+@import '../../../assets/styles/variables.scss';
+
+.header {
+  .navbar {
+    padding: 0 !important;
+  }
+
+
+  // center nav-items in burger menu
+  @media (max-width: 1200px) {
+    .navbar .navbar-nav {
+      display: flex;
+      align-items: center;
+      vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    color: $white-text1;
+  }
+
+
+  .nav-item {
+    color: $white-text1;
+    font-family: "BraindYerevan";
+    font-size: 31px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+      border-bottom: 3px solid $white;
+
+    }
+  }
+
+  .bg-dark {
+    background-color: $dark-red !important;
+  }
+
+
+  .register {
+    text-decoration: none;
+    list-style: none;
+    margin: 0 56px 0 0;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &-logo {
+    margin: 17px 36px 35px 46px;
+    cursor: pointer;
+  }
+
+  &-profile-img {
+    width: 73px;
+    height: 73px;
+    margin: 0 23.5px 0 23px;
+  }
+
+  &-search-btn {
+    font-size: 31px;
+    color: $white-logo;
+    cursor: pointer;
+    margin-right: 32.3px;
+  }
+
+  &-search-input {}
+
+  &-profile-btn {
+    width: 203px;
+    height: 73px;
+    color: $dark-red;
+    background-color: $white;
+    border-radius: 29px;
+    letter-spacing: 0px;
+    font-family: "BraindYerevan";
+    font-size: $fs32;
+    text-align: center;
+    cursor: pointer;
+  }
+
+}
