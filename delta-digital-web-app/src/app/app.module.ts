@@ -11,6 +11,7 @@ import { ShellComponent } from './shell/shell.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { HeaderComponent } from './shell/header/header.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { MainComponent } from './components/main/main.component';
 
 
 
@@ -19,7 +20,8 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     AppComponent,
     ShellComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
