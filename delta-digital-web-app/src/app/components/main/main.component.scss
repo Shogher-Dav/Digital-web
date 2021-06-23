@@ -322,12 +322,14 @@
 
   .questions-wrapper {
     background-image: url('../../../assets/images/Home page/Сгруппировать\ 6482.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 1175px;
     margin-bottom: 40px;
+    margin-top: 8.65%;
+    @media screen and (max-width: 1590px) {
+      background-size: contain;
 
-
+    }
     .questions {
 
       padding-top: 23vw;
@@ -353,14 +355,14 @@
         }
 
         @media screen and (max-width: 490px) {
-          min-width: 305px;
+          min-width: 250px;
         }
 
         p {
           text-align: left;
           color: $white;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          @include adaptiv-font(20, 12);
+          @include adaptiv-font(20, 10);
         }
 
       }
