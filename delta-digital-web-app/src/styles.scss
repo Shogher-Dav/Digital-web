@@ -1,20 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
-body{
+body {
   margin: 0;
   padding: 0;
 }
-html, body{
-  height: 100%;
-}
+
+
 
 
 @font-face {
-    font-family: "BraindYerevan";
-    src: url("./assets/fonts/BraindYerevan.ttf")format("truetype"),
+  font-family: "BraindYerevan";
+  src: url("./assets/fonts/BraindYerevan.ttf")format("truetype"),
     url("./assets/fonts/BraindYerevan.woff")format("woff"),
     url("./assets/fonts/BraindYerevan.woff2")format("woff2");
-    font-weight: normal;
-    font-style: normal;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.btn-click-style {
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none !important;
+    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
+
+  //animation while click
+
+  &::after {
+    transition: opacity 1s;
+  }
+
+  &:active {
+    transform: scale(.96);
+  }
+
+  &::before {
+    transition: opacity .5s;
+  }
+
+}

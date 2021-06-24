@@ -1,6 +1,24 @@
 @import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins.scss';
 
 .header {
+  &-logo {
+    margin: 12px 36px 30px 46px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin: 0;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+
   .navbar {
     padding: 0 !important;
   }
@@ -19,46 +37,106 @@
     }
   }
 
-  .navbar-dark .navbar-nav .nav-link {
+  .collapse-block {
+    display: flex;
+
+    @media screen and (max-width: 1200px) {
+      display: inline;
+    }
+
+  }
+
+  .nav-link {
     color: $white-text1;
+
+    @media screen and (max-width: 1200px) {
+      color: $black;
+    }
   }
 
 
   .nav-item {
-    color: $white-text1;
     font-family: "BraindYerevan";
-    font-size: 31px;
     cursor: pointer;
     border-bottom: 3px solid transparent;
+    @include adaptiv-font(31, 20);
 
     &:hover {
       border-bottom: 3px solid $white;
 
     }
+
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+      background-color: $menu-gray;
+      margin: 2px 0;
+    }
   }
 
   .bg-dark {
     background-color: $dark-red !important;
+
+    @media screen and (max-width: 1200px) {
+      background-color: $white !important;
+    }
+  }
+
+  .bg-gray {
+    @media screen and (max-width: 1200px) {
+      background-color: $footer-gray;
+      width: 25vw;
+      min-width: 120px;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .nav-span {
+    @media screen and (max-width: 1200px) {
+      color: $dark-red;
+      font-size: $fs28;
+    }
+  }
+
+  .nav-collapse-container {
+    @media screen and (max-width: 1200px) {
+
+      background-color: $footer-gray;
+    }
   }
 
 
   .register {
-    text-decoration: none;
-    list-style: none;
-    margin: 0 56px 0 0;
-    align-items: center;
+    margin-right: 56px;
     cursor: pointer;
+ 
+
+
+
+    &-item {
+      @media screen and (max-width: 1200px) {
+        background-color: $white;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 29px;
+        padding: 0 15px;
+
+      }
+    }
   }
 
-  &-logo {
-    margin: 17px 36px 35px 46px;
-    cursor: pointer;
-  }
 
   &-profile-img {
     width: 73px;
     height: 73px;
-    margin: 0 23.5px 0 23px;
+    margin: 0 6.8%;
+
+    @media screen and (max-width: 1200px) {
+      width: 50px;
+      height: 50px;
+
+    }
   }
 
   &-search-btn {
@@ -66,6 +144,12 @@
     color: $white-logo;
     cursor: pointer;
     margin-right: 32.3px;
+    @include adaptiv-font(31, 16);
+
+    @media screen and (max-width: 1200px) {
+      color: $black;
+      margin-right: 5px;
+    }
   }
 
   &-search-input {}
@@ -78,9 +162,25 @@
     border-radius: 29px;
     letter-spacing: 0px;
     font-family: "BraindYerevan";
-    font-size: $fs32;
     text-align: center;
     cursor: pointer;
+    @include adaptiv-font(32, 16);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+
+    @media screen and (max-width: 1200px) {
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      height: 50px;
+    }
+  }
+
+  .nav-second-part {
+    margin-top: 17px;
+
+    @media screen and (max-width: 575px) {
+      margin: 3px;
+    }
   }
 
 }

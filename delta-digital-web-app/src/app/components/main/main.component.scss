@@ -24,6 +24,7 @@
 
     @media screen and (max-width: 450px) {
       height: 250px;
+      background-size: cover;
     }
   }
 
@@ -67,14 +68,12 @@
       }
 
       @media screen and (max-width: 450px) {
-
         left: 125px;
         top: 79px;
       }
 
       @media screen and (max-width: 400px) and (min-width: 320px) {
-
-        left: 84px;
+        left: 70px;
         top: 79px;
       }
 
@@ -103,7 +102,7 @@
         }
 
         @media screen and (max-width: 450px) {
-          width: 120px;
+          width: 145px;
           height: 18px;
         }
       }
@@ -160,30 +159,8 @@
         @include adaptiv-font(24, 12);
         padding: 0.35em 2.4em;
 
-        @media screen and (max-width: 620px) {
-          margin-top: 0;
-        }
-
-        &:focus,
-        &:active,
-        &:hover {
-          outline: none !important;
-          box-shadow: none;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        }
-
-        //animation while click
-
-        &::after {
-          transition: opacity 1s;
-        }
-
-        &:active {
-          transform: scale(.96);
-        }
-
-        &::before {
-          transition: opacity .5s;
+        @media screen and (max-width: 1320px) {
+          margin-top: 10px;
         }
       }
     }
@@ -266,13 +243,13 @@
     background-image: url('../../../assets/images/Home page/Сгруппировать\ 6384.png');
     background-size: 1783px 983px;
     background-repeat: no-repeat;
-    height: 1145px;
     margin-top: 100px;
     background-position-y: 42px;
     background-position-x: -88px;
 
     @media screen and (max-width: 767px) {
       margin-top: 0;
+      background-image: none;
     }
 
 
