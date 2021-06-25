@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,21 +8,26 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  currentDate = new Date();
- 
-  form = new FormGroup({
-    dateYMD: new FormControl(new Date()),
-    dateFull: new FormControl(new Date()),
-    dateMDY: new FormControl(new Date()),
-    dateRange: new FormControl([
-      new Date(),
-      new Date(this.currentDate.setDate(this.currentDate.getDate() + 7))
-    ])
-  });
 
-  constructor() { }
+
+  userFormGroup: FormGroup;
+
+
+  constructor(private fb: FormBuilder) {
+    this.userFormGroup = this.fb.group({
+      id: [null],
+      birthDate: [null, Validators.required],
+      email: [null, Validators.required],
+      name: [null, Validators.required],
+      password: [null, Validators.required],
+      phoneNumber: [null, Validators.required],
+      surname: [null, Validators.required],
+    })
+  }
 
   ngOnInit(): void {
+
+
   }
 
 }
