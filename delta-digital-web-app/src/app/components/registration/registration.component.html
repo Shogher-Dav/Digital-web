@@ -3,11 +3,11 @@
         <div>
             <img src="../../../assets/images/Сгруппировать 6454.png" alt="">
         </div>
-        <div class="registration-wrapper ">
-            <div class="registration-container ">
-                <div class="container h-100 ">
+        <div class="registration-wrapper">
+            <div class="registration-container">
+                <div class="container h-100">
                     <div class="row h-100 justify-content-center align-items-center">
-                        <div class="col-10   ">
+                        <div class="col-10">
                             <form>
                                 <p class="registration-title">Գրանցել հաշիվ</p>
                                 <div class="row">
@@ -19,12 +19,10 @@
                                             </span>
                                             <input type="text" class="form-control input-sm">
                                         </div>
-
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="inputPassword">Ազգանուն</label>
                                         <div class="input-group">
-
                                             <input type="text" class=" form-control input-sm">
                                         </div>
                                     </div>
@@ -34,7 +32,6 @@
                                     <div class="input-group">
                                         <span class="logo-bg">
                                             <i class="fas fa-envelope input-logo"></i>
-
                                         </span>
                                         <input type="text" class=" form-control input-sm">
                                     </div>
@@ -42,11 +39,12 @@
                                 <div>
                                     <label>Ծննդյան ամսաթիվ</label>
                                     <div class="input-group">
-
-                                        <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
-                                            formControlName="dateYMD" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
+                                        <input class="form-control" #datepickerYMD="bsDatepicker" 
+                                            bsDatepicker
+                                            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
                                             [bsConfig]="{ adaptivePosition: true }"
-                                            [bsConfig]="{containerClass:'theme-red'}">
+                                            [bsConfig]="{containerClass:'theme-red'}"
+                                            formControlName="dateYMD" >
                                         <span class="logo-bg">
                                             <i class="fa fa-calendar-alt input-logo" aria-hidden="true"
                                                 (click)="datepickerYMD.toggle()"
@@ -59,7 +57,6 @@
                                     <div class="input-group">
                                         <span class="logo-bg">
                                             <i class="fas fa-phone input-logo"></i>
-
                                         </span>
                                         <input type="text" class=" form-control input-sm">
                                     </div>
@@ -69,7 +66,6 @@
                                     <div class="input-group">
                                         <span class="logo-bg">
                                             <i class="fas fa-lock input-logo"></i>
-
                                         </span>
                                         <input type="password" class="form-control password" name="password"
                                             placeholder="6 Նշանից ոչ պակաս">

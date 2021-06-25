@@ -8,13 +8,13 @@
 
                 </button>
                 <a *ngIf="!navbarOpen" class="navbar-brand header-logo">
-                    <img src="../../../assets/images/logo-small.png" alt="logo">
+                    <img  routerLink="/" src="../../../assets/images/logo-small.png" alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item gray-item" *ngIf="!isLoggedIn">
-                            <a class="nav-link">Գլխավոր</a>
+                            <a routerLink="/" class="nav-link">Գլխավոր</a>
                         </li>
                         <li class="nav-item gray-item" *ngIf="isLoggedIn">
                             <a class="nav-link">Հեռուստալիքներ</a>
@@ -47,8 +47,8 @@
 
        <div class="register nav-second-part" *ngIf="!isLoggedIn">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item  register-item btn-click-style">
-                    <a class="nav-link ">Գրանցվել</a>
+                <li class="nav-item register-item">
+                    <a  routerLink="/register" class="nav-link register-link">Գրանցվել</a>
                 </li>
             </ul>
         </div> 
