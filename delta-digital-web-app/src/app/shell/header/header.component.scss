@@ -186,3 +186,8 @@
   }
 
 }
+
+// remove borders from router-links 
+*[ng-reflect-router-link]:focus {
+  outline: none;
+}
