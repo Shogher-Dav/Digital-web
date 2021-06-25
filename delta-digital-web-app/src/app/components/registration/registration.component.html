@@ -1,0 +1,97 @@
+<div class="registration">
+    <div class=" row d-flex justify-content-center align-items-center">
+        <div>
+            <img src="../../../assets/images/Сгруппировать 6454.png" alt="">
+        </div>
+        <div class="registration-wrapper ">
+            <div class="registration-container ">
+                <div class="container h-100 ">
+                    <div class="row h-100 justify-content-center align-items-center">
+                        <div class="col-10   ">
+                            <form>
+                                <p class="registration-title">Գրանցել հաշիվ</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Անուն</label>
+                                        <div class="input-group">
+                                            <span class="logo-bg">
+                                                <i class="fa fa-user input-logo" aria-hidden="true"></i>
+                                            </span>
+                                            <input type="text" class="form-control input-sm">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="inputPassword">Ազգանուն</label>
+                                        <div class="input-group">
+
+                                            <input type="text" class=" form-control input-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Էլ․ Հասցե</label>
+                                    <div class="input-group">
+                                        <span class="logo-bg">
+                                            <i class="fas fa-envelope input-logo"></i>
+
+                                        </span>
+                                        <input type="text" class=" form-control input-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Ծննդյան ամսաթիվ</label>
+                                    <div class="input-group">
+
+                                        <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
+                                            formControlName="dateYMD" [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
+                                            [bsConfig]="{ adaptivePosition: true }"
+                                            [bsConfig]="{containerClass:'theme-red'}">
+                                        <span class="logo-bg">
+                                            <i class="fa fa-calendar-alt input-logo" aria-hidden="true"
+                                                (click)="datepickerYMD.toggle()"
+                                                [attr.aria-expanded]="datepickerYMD.isOpen"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Հեռախոսահամար</label>
+                                    <div class="input-group">
+                                        <span class="logo-bg">
+                                            <i class="fas fa-phone input-logo"></i>
+
+                                        </span>
+                                        <input type="text" class=" form-control input-sm">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="password">Գաղտնաբառ</label>
+                                    <div class="input-group">
+                                        <span class="logo-bg">
+                                            <i class="fas fa-lock input-logo"></i>
+
+                                        </span>
+                                        <input type="password" class="form-control password" name="password"
+                                            placeholder="6 Նշանից ոչ պակաս">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="password">Հաստատել գաղտնաբառը</label>
+                                    <div class="input-group">
+                                        <span class="logo-bg">
+                                            <i class="fas fa-lock input-logo"></i>
+                                        </span>
+                                        <input type="password" class="form-control password" name="password">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn registration-btn btn-click-style">ԳՐԱՆՑՎԵԼ</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

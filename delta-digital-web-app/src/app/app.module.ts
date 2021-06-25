@@ -12,6 +12,9 @@ import { FooterComponent } from './shell/footer/footer.component';
 import { HeaderComponent } from './shell/header/header.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MainComponent } from './components/main/main.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 
 
@@ -21,7 +24,8 @@ import { MainComponent } from './components/main/main.component';
     ShellComponent,
     FooterComponent,
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ import { MainComponent } from './components/main/main.component';
     TooltipModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),    
 
   ],
   providers: [],

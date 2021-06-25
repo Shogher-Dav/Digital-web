@@ -1,0 +1,134 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins.scss';
+
+
+.registration {
+
+  margin-bottom: 20px;
+
+  &-wrapper {
+    // background-image: url('../../../assets/images/Сгруппировать\ 6455.png');
+    // background-size: cover;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &-container {
+    background-color: $light-red;
+    border-radius: 98px;
+    width: 100%;
+    padding: 3.63em 0;
+
+    @media screen and (max-width: 576px) {
+      width: 63%;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+  }
+
+  &-title {
+    letter-spacing: 0px;
+    color: $white-text1;
+    font-family: 'BraindYerevan';
+    text-align: center;
+    @include adaptiv-font(39, 18);
+
+  }
+
+  &-btn {
+    color: $black;
+    background-color: $white;
+    letter-spacing: 0px;
+    border-radius: 40px;
+    margin-top: 31px;
+    @include adaptiv-font(23, 16);
+    padding: 0.57em 1.74em;
+    font-family: 'BraindYerevan';
+    text-align: center;
+  }
+
+  label {
+    text-align: left;
+    letter-spacing: 0px;
+    color: $white;
+    font-size: $fs22;
+    font-family: 'BraindYerevan';
+    @include adaptiv-font(22, 13);
+    margin-top: 16px;
+
+    @media screen and (max-width: 576px) {
+      margin-top: 0;
+    }
+  }
+
+  input {
+    border-radius: 39px;
+    border: none;
+    background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+  .input-logo {
+    color: white;
+    background-color: red;
+    font-size: 13px;
+    border-radius: 50%;
+    padding: 5px
+  }
+
+  .input-group {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 39px;
+
+    @media screen and (max-width: 576px) {
+      padding: 2px 2px 0 2px;
+      height: 31px;
+
+    }
+  }
+
+  input {
+
+    &:active,
+    &:visited {
+      outline: none;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 12px;
+    }
+
+  }
+
+  .form-control:focus {
+    border-color: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  ::-webkit-input-placeholder {
+    font-size: 10px !important;
+  }
+
+  :-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 10px !important;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 10px !important;
+  }
+
+
+}

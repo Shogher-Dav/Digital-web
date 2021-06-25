@@ -36,6 +36,8 @@
               "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
               "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
               "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-solid.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+
               ],
             "scripts": [
 
