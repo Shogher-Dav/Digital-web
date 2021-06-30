@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   searchText = new FormControl('');
   
   // temporary variable, need to be removed or changed
-  isLoggedIn = false;
+  isLoggedIn = true;
   constructor() { }
 
   ngOnInit(): void {

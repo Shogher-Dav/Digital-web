@@ -8,6 +8,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 1020px;
+    position: relative;
 
     @media screen and (max-width: 1460px) {
       background-size: contain;
@@ -29,9 +30,6 @@
   }
 
   .login {
-    position: relative;
-
-
 
     &-form {
       position: absolute;

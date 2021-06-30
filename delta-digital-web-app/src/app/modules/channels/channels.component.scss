@@ -1,0 +1,154 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/mixins.scss';
+
+.channels {
+
+  margin-top:8.39%;
+
+
+  &-container {
+    background-image: url('../../../assets/images/Сгруппировать\ 6458.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+
+  .bg-TV-img {
+    background-image: url('../../../assets/images/transparent-TV.png');
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media screen and (max-width: 1200px) {
+      height: 70vw;
+    }
+
+  }
+
+  .red-line-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .my-list-btn {
+    position: absolute;
+    top: 25%;
+    background: $white 0% 0% no-repeat padding-box;
+    border: 5px solid $light-red;
+    color: $light-red;
+    border-radius: 50%;
+    font-family: 'BraindYerevan';
+    @include adaptiv-font(47, 25);
+    /* for centering button*/
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 7.563rem 5rem !important;
+
+    @media screen and (max-width: 992px) {
+      padding: 4.563rem 3rem !important;
+    }
+  }
+
+  .player-section {
+    margin: 45px 0;
+  }
+
+  .player {
+    position: absolute;
+    top: 12%;
+    left: 8%;
+    border-radius: 37px;
+    min-width: 200px;
+    min-height: 180px;
+    height: 27.71vw;
+    width: 38.6vw;
+
+    @media screen and (max-width: 1200px) {
+      height: 42.71vw;
+      width: 60.6vw;
+
+    }
+
+    @media screen and (max-width: 576px) {
+      height: 44.71vw;
+      width: 66.6vw;
+      top: 7%;
+      border-radius: 22px;
+    }
+
+    @media screen and (max-width: 426px) {
+      top: 3%;
+    }
+  }
+
+  .title {
+    text-align: left;
+    letter-spacing: 0px;
+    color: $black-text;
+    font-family: 'BraindYerevan';
+    @include adaptiv-font(76, 30);
+    text-align: center;
+  }
+
+  .live-stream-text {
+    color: $light-red;
+    position: absolute;
+    top: -61px;
+    font-family: 'BraindYerevan';
+    @include adaptiv-font(43, 20)
+  }
+
+  .channel-logo {
+    width: 100%;
+    min-width: 40px;
+  }
+
+  .channels-list {
+    margin: 0 auto;
+    width: 90%;
+
+    &-item {
+      width: 724px;
+      height: 172px;
+      padding: 22px 24px 0 0;
+      margin-bottom: 22px;
+      .favourite-logo {
+        cursor: pointer;
+      }
+
+      .channel-name {
+        text-align: center;
+        letter-spacing: 0.92px;
+        color: $dark-red;
+        opacity: 1;
+        font-family: 'BraindYerevan';
+        @include adaptiv-font(23, 11);
+        margin-bottom: 13px;
+        margin-left: 23px;
+      }
+
+      .time {
+        color: $black;
+        @include adaptiv-font(16, 12);
+        font-family: 'Roboto';
+      }
+
+      .tv-show-name {
+        letter-spacing: 0.56px;
+        color: $black;
+        font-family: 'BraindYerevan';
+        margin-left: 17.5%;
+        @include adaptiv-font(14, 11);
+      }
+
+      .next {
+        opacity: 0.40;
+      }
+    }
+  }
+
+}

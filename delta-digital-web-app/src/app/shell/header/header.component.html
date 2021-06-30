@@ -12,22 +12,22 @@
 
                 <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item gray-item" *ngIf="!isLoggedIn">
+                        <li class="nav-item gray-item" >
                             <a routerLink="/" class="nav-link">Գլխավոր</a>
                         </li>
                         <li class="nav-item gray-item" *ngIf="isLoggedIn">
-                            <a class="nav-link">Հեռուստալիքներ</a>
+                            <a routerLink="/channels" class="nav-link">Հեռուստալիքներ</a>
                         </li>
                         <li class="nav-item gray-item" *ngIf="isLoggedIn">
                             <a class="nav-link">Տեսադարան</a>
                         </li>
-                        <li class="nav-item gray-item" *ngIf="!isLoggedIn">
+                        <li class="nav-item gray-item" >
                             <a class="nav-link">Մեր մասին</a>
                         </li>
-                        <li class="nav-item gray-item" *ngIf="!isLoggedIn">
+                        <li class="nav-item gray-item" >
                             <a class="nav-link">Կապ</a>
                         </li>
-                        <li class="nav-item" *ngIf="!isLoggedIn">
+                        <li class="nav-item" >
                             <a class="nav-link">Հարցեր</a>
                         </li>
                     </ul>

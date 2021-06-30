@@ -25,7 +25,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     FooterComponent,
     HeaderComponent,
     MainComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,8 +34,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDatepickerModule.forRoot(),    
-
+    BsDatepickerModule.forRoot(),
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

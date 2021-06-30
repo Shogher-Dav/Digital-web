@@ -5,7 +5,10 @@ import { RegistrationComponent } from './components/registration/registration.co
 
 const routes: Routes = [
   {path: '', component: MainComponent},
-  {path: 'register', component: RegistrationComponent}
+  {path: 'register', component: RegistrationComponent},
+  {path: 'channels', 
+  loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule)
+}
 ];
 
 @NgModule({
