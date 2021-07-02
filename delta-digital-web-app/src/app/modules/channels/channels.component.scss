@@ -163,18 +163,23 @@
 
   @media screen and (max-width: 1200px) {
     top: 24%;
-    left: -17%;
+    left: 27%;
   }
 
   &:before {
     content: "";
     display: block;
     margin: -1em;
-    height: 4.35em;
+    height: 6.35em;
     width: 6.35em;
     background: white;
     box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
     transform: scale(0.8, 1) rotate(45deg);
+
+    @media screen and (max-width: 1200px) {
+      width: 4.35em;
+      height: 5.35em;
+    }
   }
 }
 

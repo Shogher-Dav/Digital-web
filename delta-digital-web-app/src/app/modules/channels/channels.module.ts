@@ -11,13 +11,15 @@ import { VgCoreModule } from '@videogular/ngx-videogular/core';
 import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
+import { MyListComponent } from './my-list/my-list.component';
 
 
 
 @NgModule({
   declarations: [
     ChannelsListComponent,
-    ChannelsComponent
+    ChannelsComponent,
+    MyListComponent
   ],
   imports: [
     CommonModule,
