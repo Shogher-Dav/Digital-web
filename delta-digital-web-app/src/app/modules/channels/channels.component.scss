@@ -116,9 +116,77 @@
 }
 
 :host ::ng-deep .header .bg-dark {
-  background-color: white !important;
+  background-color: $white !important;
 }
 
 :host ::ng-deep .header .nav-link {
-  color: black;
+  color: $header-black-text;
+
+  &:hover,
+  &:focus {
+    color: $header-black-text;
+  }
+}
+
+:host ::ng-deep .header .nav-item {
+  &:hover {
+    border-bottom: 3px solid $light-red !important;
+  }
+
+}
+
+
+:host ::ng-deep .triangle-container {
+  position: relative;
+  width: 6.35em;
+  height: 5.35em;
+  background: white;
+  box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  margin-top: -18px;
+
+  @media screen and (max-width: 1200px) {
+    width: 4em;
+    height: 4em;
+  }
+
+}
+
+:host ::ng-deep .logo-traingle {
+  position: absolute;
+  top: 40%;
+  left: 16%;
+  width: 2em;
+  height: 2em;
+  clip: rect(2.6em, 6em, 7em, -3em);
+
+  @media screen and (max-width: 1200px) {
+    top: 24%;
+    left: -17%;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    margin: -1em;
+    height: 4.35em;
+    width: 6.35em;
+    background: white;
+    box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
+    transform: scale(0.8, 1) rotate(45deg);
+  }
+}
+
+:host ::ng-deep .logo {
+  z-index: 100;
+  padding: 30px 17px;
+}
+
+:host ::ng-deep .header .header-logo {
+  @media screen and (max-width: 1200px) {
+    img {
+      width: 100% !important;
+    }
+  }
 }

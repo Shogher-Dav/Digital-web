@@ -47,24 +47,19 @@
   }
 
   .nav-link {
-    // color: $white-text1;
-
     @media screen and (max-width: 1200px) {
       color: $black;
     }
   }
 
-
   .nav-item {
-    font-family: "BraindYerevan";
     cursor: pointer;
     border-bottom: 3px solid transparent;
     @include adaptiv-font(31, 20);
 
-    &:hover {
-      border-bottom: 3px solid $white;
-
-    }
+    // &:hover {
+    //   border-bottom: 3px solid $white;
+    // }
 
     @media screen and (max-width: 1200px) {
       width: 100%;
@@ -115,6 +110,7 @@
     &-item {
       @media screen and (max-width: 1200px) {
         background-color: $white;
+
         &:hover {
           border-bottom: 3px solid $black;
         }
@@ -191,3 +187,4 @@
 *[ng-reflect-router-link]:focus {
   outline: none;
 }
+

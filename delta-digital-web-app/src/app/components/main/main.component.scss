@@ -452,4 +452,14 @@
 
 :host ::ng-deep .header .nav-link {
   color: $white-text1;
+
+  &:hover, &:focus {
+    color: $white-text1;
+  }
+}
+:host ::ng-deep .header .nav-item {
+  &:hover {
+    border-bottom: 3px solid $white-text1;
+  }
+
 }

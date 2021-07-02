@@ -7,9 +7,14 @@
                     <i class="fas fa-bars nav-span"></i>
                 </button>
                 <a *ngIf="!navbarOpen" class="navbar-brand header-logo">
-                    <img  routerLink="/" src="../../../assets/images/logo-small.png" alt="logo">
-                </a>
+                    <div class="triangle-container">
+                        <img  class="logo" routerLink="/" src="../../../assets/images/logo-small.png" alt="logo">
 
+                        <div class="logo-traingle ">
+                        </div>
+                    </div>
+                   
+                </a>
                 <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item gray-item" >
