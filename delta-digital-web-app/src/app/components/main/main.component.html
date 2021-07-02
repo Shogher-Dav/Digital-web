@@ -1,7 +1,10 @@
+<app-header></app-header>
+
+
 <div class="main">
     <div class="main-container">
         <div class="d-flex justify-content-between align-items-end">
-            <div class="login-contanier">
+            <div  *ngIf="!isLoggedIn" class="login-contanier">
                 <div class="login">
                     <form class="login-form">
                         <div class="form-group">
@@ -22,7 +25,6 @@
                         </div>
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary login-form-btn btn-click-style">Մուտք</button>
-
                         </div>
                     </form>
                 </div>
@@ -78,6 +80,19 @@
             </div>
         </div>
     </section>
+    <section>
+        <div class="channels">
+            <div class="d-flex justify-content-center">
+                <span class="title">Հեռուստաալիքներ</span>
+            </div>
+            <div class="channels-container">
+                <div class="channels-list">
+                    <app-channels-list></app-channels-list>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section>
         <div class="info">
@@ -117,16 +132,61 @@
         </div>
     </section>
     <section>
+        <div class="gallery">
+            <span class="title">ՏԵՍԱ<span class="title-part2">ԴԱՐԱՆ</span></span>
+            <div class="gallery-icons row justify-content-around col-xs">
+                <div class="card gallery-options">
+                    <div class="col-xs-1 gallery-options-width-sm">
+                        <img src="../../../assets/images/1257.png" alt="">
+                        <div>
+                            <span>Սերիալներ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card gallery-options ">
+                    <div class="gallery-options-width-sm col-xs-1">
+                        <img src="../../../assets/images/1289.png" alt="">
+                        <div>
+                            <span>Ֆիլմեր</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card gallery-options ">
+                    <div class="col-xs-1 gallery-options-width-sm">
+                        <img src="../../../assets/images/1275.png" alt="">
+                        <div>
+                            <span>Հաղորդումներ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card gallery-options ">
+                    <div class="child-channel col-xs-1 gallery-options-width-sm">
+                        <img src="../../../assets/images/1276.png" alt="">
+                        <div>
+                            <span>Մանկական</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card gallery-options ">
+                    <div class="col-xs-1 gallery-options-width-sm">
+                        <div>
+                            <img src="../../../assets/images/3404.png" alt="">
+                        </div>
+                        <div>
+                            <span>Իմ Ցանկը</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
         <div class="questions-wrapper">
             <div class="questions  row justify-content-md-center">
-
                 <div *ngFor="let question of questions" class="question col-sm-4">
-
                     <p>{{question.text}}</p>
                 </div>
             </div>
-
         </div>
-
     </section>
 </div>

@@ -3,7 +3,7 @@
 
 .channels {
 
-  margin-top:8.39%;
+  margin-top: 8.39%;
 
 
   &-container {
@@ -14,11 +14,33 @@
 
   }
 
+  .title {
+    color: $black-text;
+    @include adaptiv-font(76, 30);
+    text-align: center;
+  }
+
+  .live-stream-text {
+    color: $light-red;
+    position: absolute;
+    top: -61px;
+    @include adaptiv-font(43, 20);
+    margin-top: 10px;
+
+    p {
+      margin-bottom: 0;
+
+    }
+  }
+
+
   .bg-TV-img {
-    background-image: url('../../../assets/images/transparent-TV.png');
+    background-image: url('../../../assets/images/Channels/transparent-TV.png');
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
+    height: 38.1vw;
+    margin: 0 10px;
 
     @media screen and (max-width: 1200px) {
       height: 70vw;
@@ -28,28 +50,34 @@
 
   .red-line-img {
     width: 100%;
-    height: 100%;
     position: relative;
+
+    @media screen and (max-width: 1200px) {
+      width: 80%;
+      height: 60vw;
+    }
   }
 
   .my-list-btn {
     position: absolute;
-    top: 25%;
-    background: $white 0% 0% no-repeat padding-box;
+    top: 30%;
+    background-color: $white;
     border: 5px solid $light-red;
     color: $light-red;
     border-radius: 50%;
-    font-family: 'BraindYerevan';
     @include adaptiv-font(47, 25);
     /* for centering button*/
     left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 7.563rem 5rem !important;
+    margin: 0 auto;
+    padding: 4.6rem 2.1rem !important;
 
     @media screen and (max-width: 992px) {
-      padding: 4.563rem 3rem !important;
+      padding: 3.1rem 1.4rem !important
+    }
+
+    @media screen and (max-width: 400px) {
+      top: 12%;
     }
   }
 
@@ -62,93 +90,35 @@
     top: 12%;
     left: 8%;
     border-radius: 37px;
-    min-width: 200px;
-    min-height: 180px;
     height: 27.71vw;
     width: 38.6vw;
+    min-width: 203px;
+    min-height: 147px;
 
     @media screen and (max-width: 1200px) {
-      height: 42.71vw;
-      width: 60.6vw;
-
+      height: 43.71vw;
+      width: 63.6vw;
     }
 
     @media screen and (max-width: 576px) {
       height: 44.71vw;
       width: 66.6vw;
-      top: 7%;
+      top: 13%;
       border-radius: 22px;
     }
 
     @media screen and (max-width: 426px) {
-      top: 3%;
+      top: 10%;
     }
   }
 
-  .title {
-    text-align: left;
-    letter-spacing: 0px;
-    color: $black-text;
-    font-family: 'BraindYerevan';
-    @include adaptiv-font(76, 30);
-    text-align: center;
-  }
 
-  .live-stream-text {
-    color: $light-red;
-    position: absolute;
-    top: -61px;
-    font-family: 'BraindYerevan';
-    @include adaptiv-font(43, 20)
-  }
+}
 
-  .channel-logo {
-    width: 100%;
-    min-width: 40px;
-  }
+:host ::ng-deep .header .bg-dark {
+  background-color: white !important;
+}
 
-  .channels-list {
-    margin: 0 auto;
-    width: 90%;
-
-    &-item {
-      width: 724px;
-      height: 172px;
-      padding: 22px 24px 0 0;
-      margin-bottom: 22px;
-      .favourite-logo {
-        cursor: pointer;
-      }
-
-      .channel-name {
-        text-align: center;
-        letter-spacing: 0.92px;
-        color: $dark-red;
-        opacity: 1;
-        font-family: 'BraindYerevan';
-        @include adaptiv-font(23, 11);
-        margin-bottom: 13px;
-        margin-left: 23px;
-      }
-
-      .time {
-        color: $black;
-        @include adaptiv-font(16, 12);
-        font-family: 'Roboto';
-      }
-
-      .tv-show-name {
-        letter-spacing: 0.56px;
-        color: $black;
-        font-family: 'BraindYerevan';
-        margin-left: 17.5%;
-        @include adaptiv-font(14, 11);
-      }
-
-      .next {
-        opacity: 0.40;
-      }
-    }
-  }
-
+:host ::ng-deep .header .nav-link {
+  color: black;
 }

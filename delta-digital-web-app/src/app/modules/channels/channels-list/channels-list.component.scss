@@ -1,0 +1,65 @@
+@import '../../../../assets/styles/variables.scss';
+@import '../../../../assets/styles/mixins.scss';
+.channels-list {
+    margin: 0 auto;
+    width: 90%;
+
+    .channel-logo {
+      width: 100%;
+      min-width: 40px;
+    }
+
+    &-item {
+      width: 724px;
+      height: 172px;
+      padding: 22px 24px 0 0;
+      margin-bottom: 22px;
+      .favourite-logo {
+        cursor: pointer;
+      }
+
+      .channel-name {
+        text-align: center;
+        letter-spacing: 0.92px;
+        color: $dark-red;
+        opacity: 1;
+        font-family: 'BraindYerevan';
+        @include adaptiv-font(23, 11);
+        margin-bottom: 13px;
+        margin-left: 23px;
+      }
+
+      .favourite-icon{
+        @include adaptiv-font(21, 12);
+
+        .favourite {
+            color: $dark-burgundi;
+        }
+      }
+
+      .time {
+        color: $black;
+        @include adaptiv-font(16, 12);
+        font-family: 'Roboto';
+      }
+
+      .tv-show-name {
+        letter-spacing: 0.56px;
+        color: $black;
+        margin-left: 17.5%;
+        @include adaptiv-font(14, 11);
+      }
+
+      .next {
+        opacity: 0.40;
+      }
+    }
+  }
+
+:host ::ng-deep .header .bg-dark {
+    background-color: white !important;
+}
+
+:host ::ng-deep .header .nav-link {
+    color:black;
+}

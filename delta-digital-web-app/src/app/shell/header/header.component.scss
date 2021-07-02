@@ -47,7 +47,7 @@
   }
 
   .nav-link {
-    color: $white-text1;
+    // color: $white-text1;
 
     @media screen and (max-width: 1200px) {
       color: $black;
@@ -74,7 +74,7 @@
   }
 
   .bg-dark {
-    background-color: $dark-red !important;
+    // background-color: $dark-red !important;
 
     @media screen and (max-width: 1200px) {
       background-color: $white !important;
