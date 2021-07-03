@@ -15,6 +15,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ChannelsModule } from './modules/channels/channels.module';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HeaderModule } from './shell/header/header.module';
+import { PopoverModule } from 'ngx-bootstrap/popover';
 
 
 
@@ -36,7 +37,8 @@ import { HeaderModule } from './shell/header/header.module';
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     HeaderModule,
-    ChannelsModule
+    ChannelsModule,
+    PopoverModule.forRoot()
 
   ],
   providers: [],

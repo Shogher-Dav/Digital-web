@@ -1,3 +1,5 @@
+<app-header></app-header>
+<hr>
 <div class="registration">
     <div class=" row d-flex justify-content-center align-items-center">
         <div>
@@ -8,7 +10,7 @@
                 <div class="container h-100">
                     <div class="row h-100 justify-content-center align-items-center">
                         <div class="col-10">
-                            <form>
+                            <form [formGroup]="userFormGroup">
                                 <p class="registration-title">Գրանցել հաշիվ</p>
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -17,13 +19,13 @@
                                             <span class="logo-bg">
                                                 <i class="fa fa-user input-logo" aria-hidden="true"></i>
                                             </span>
-                                            <input type="text" class="form-control input-sm">
+                                            <input type="text" class="form-control input-sm" formControlName="name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="inputPassword">Ազգանուն</label>
                                         <div class="input-group">
-                                            <input type="text" class=" form-control input-sm">
+                                            <input type="text" class=" form-control input-sm" formControlName="surname">
                                         </div>
                                     </div>
                                 </div>
@@ -33,18 +35,16 @@
                                         <span class="logo-bg">
                                             <i class="fas fa-envelope input-logo"></i>
                                         </span>
-                                        <input type="text" class=" form-control input-sm">
+                                        <input type="email" class=" form-control input-sm" formControlName="email">
                                     </div>
                                 </div>
                                 <div>
                                     <label>Ծննդյան ամսաթիվ</label>
                                     <div class="input-group">
-                                        <input class="form-control" #datepickerYMD="bsDatepicker" 
-                                            bsDatepicker
+                                        <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
                                             [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
                                             [bsConfig]="{ adaptivePosition: true }"
-                                            [bsConfig]="{containerClass:'theme-red'}"
-                                            formControlName="dateYMD" >
+                                            [bsConfig]="{containerClass:'theme-red'}" formControlName="birthDate">
                                         <span class="logo-bg">
                                             <i class="fa fa-calendar-alt input-logo" aria-hidden="true"
                                                 (click)="datepickerYMD.toggle()"
@@ -58,30 +58,36 @@
                                         <span class="logo-bg">
                                             <i class="fas fa-phone input-logo"></i>
                                         </span>
-                                        <input type="text" class=" form-control input-sm">
+                                        <input type="text" class="form-control input-sm" formControlName="phoneNumber">
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="password">Գաղտնաբառ</label>
-                                    <div class="input-group">
+                                    <label>Գաղտնաբառ</label>
+                                    <div class="input-group"
+                                        popover="Գաղտնաբառը պետք է պարունակի մեծատառ, փոքրատառ, սիմվոլ և 8 նիշ"
+                                        triggers="mouseenter:mouseleave">
                                         <span class="logo-bg">
                                             <i class="fas fa-lock input-logo"></i>
                                         </span>
-                                        <input type="password" class="form-control password" name="password"
-                                            placeholder="6 Նշանից ոչ պակաս">
+                                        <input type="passowrd" class="form-control" formControlName="password">
                                     </div>
                                 </div>
                                 <div>
                                     <label for="password">Հաստատել գաղտնաբառը</label>
-                                    <div class="input-group">
+                                    <div class="input-group"
+                                        popover="Գաղտնաբառը պետք է պարունակի մեծատառ, փոքրատառ, սիմվոլ և 8 նիշ"
+                                        triggers="mouseenter:mouseleave">
                                         <span class="logo-bg">
                                             <i class="fas fa-lock input-logo"></i>
                                         </span>
-                                        <input type="password" class="form-control password" name="password">
+                                        <input type="password" class="form-control password" name="password"
+                                            formControlName="confirmPassword">
                                     </div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn registration-btn btn-click-style">ԳՐԱՆՑՎԵԼ</button>
+                                    <button type="submit" class="btn registration-btn btn-light"
+                                        [ngClass]="userFormGroup.valid ? '' : 'disabled'"
+                                        (click)="checkValid()">ԳՐԱՆՑՎԵԼ</button>
                                 </div>
                             </form>
                         </div>
