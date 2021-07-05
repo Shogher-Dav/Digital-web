@@ -1,0 +1,234 @@
+ @import "../../../assets/styles/mixins.scss";
+ @import "../../../assets/styles/variables.scss";
+
+ .about-us {
+
+   &-header {
+     background-image: url("../../../assets/images/About Us/pexels-koolshooters-6977374.jpg");
+     height: 42.77vw;
+     background-size: contain;
+
+   }
+
+   &-container {
+     width: 95%;
+     margin: 0 auto;
+   }
+
+
+   &-content {
+     height: 89vw;
+     background: url("../../../assets/images/About Us/Сгруппировать\ 6477.png") no-repeat center center;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     width: 100%;
+     min-height: 490px;
+
+     .title {
+       color: $burgundi;
+       @include adaptiv-font(103, 50);
+       padding-top: 6%;
+
+       @media screen and (max-width: 894px) {
+         margin: 0 auto;
+         padding-top: 0;
+       }
+     }
+
+     .text {
+       color: $black;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       width: 51%;
+       margin: 10% auto;
+       font-size: 1.3vw;
+
+
+       @media screen and (max-width: 500px) {
+         font-size: 8px;
+         margin: 6% auto;
+         width: 60%;
+       }
+
+       @media screen and (max-width: 430px) {
+         width: 69%;
+       }
+
+       @media screen and (max-width: 380px) {
+         width: 78%;
+       }
+
+       @media screen and (max-width: 336px) {
+         width: 84%;
+         margin: 8% auto;
+       }
+     }
+   }
+
+   .social-icons {
+     color: $burgundi;
+     float: left;
+     @include adaptiv-font(36, 20);
+
+     i {
+       margin-right: 30px;
+     }
+   }
+
+   .title-partner {
+     color: $burgundi;
+     @include adaptiv-font(72, 30);
+   }
+
+   .logo-partners {
+     img {
+       width: 30%;
+     }
+   }
+
+   .subscription-bg {
+     background-image: url("../../../assets/images/About Us/Сгруппировать\ 6479.png");
+     height: 60vw;
+     background-repeat: no-repeat;
+     margin-top: 7%;
+
+     @media screen and (max-width: 1620px) {
+       background-size: contain;
+
+     }
+   }
+
+   .subscription {
+
+     margin-bottom: 11.62vw;
+
+     &-text {
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: $gray-text;
+       @include adaptiv-font(40, 15);
+       width: 54vw;
+
+       @media screen and(max-width: 768px) {
+         width: 90vw;
+       }
+     }
+
+     &-btn {
+       background-color: $dark-red;
+       border-radius: 58px;
+       color: $white-logo;
+       @include adaptiv-font(61, 12);
+       width: 29.88%;
+       height: 15.56%;
+       margin-top: 10%;
+
+       @media screen and(max-width: 768px) {
+         width: 44%;
+         height: 20.4%;
+       }
+
+       @media screen and(max-width: 500px) {
+         width: 54%;
+       }
+     }
+
+     .btn {
+       white-space: normal !important;
+     }
+   }
+ }
+
+
+ :host ::ng-deep .header .bg-dark {
+   background-color: transparent !important;
+
+   @media screen and (max-width: 1200px){
+    color: transparent !important;
+  }
+ }
+
+ :host ::ng-deep .header .nav-link {
+   color: $white;
+
+   &:hover,
+   &:focus {
+     color: $white;
+   }
+ }
+
+ :host ::ng-deep .header .nav-item {
+   &:hover {
+     border-bottom: 3px solid $light-red !important;
+   }
+
+ }
+
+
+
+:host ::ng-deep .header .nav-span {
+  @media screen and (max-width: 1200px){
+    color: white !important;
+  }
+}
+
+
+ :host ::ng-deep .triangle-container {
+   position: relative;
+   width: 6.35em;
+   height: 5.35em;
+   background: white;
+   box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
+   border-bottom-left-radius: 13px;
+   border-bottom-right-radius: 13px;
+   margin-top: -18px;
+
+   @media screen and (max-width: 1200px) {
+     width: 4em;
+     height: 4em;
+   }
+
+ }
+
+ :host ::ng-deep .logo-traingle {
+   position: absolute;
+   top: 40%;
+   left: 16%;
+   width: 2em;
+   height: 2em;
+   clip: rect(2.6em, 6em, 7em, -3em);
+
+   @media screen and (max-width: 1200px) {
+     top: 24%;
+     left: 27%;
+   }
+
+   &:before {
+     content: "";
+     display: block;
+     margin: -1em;
+     height: 6.35em;
+     width: 6.35em;
+     background: white;
+     box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
+     transform: scale(0.8, 1) rotate(45deg);
+
+     @media screen and (max-width: 1200px) {
+       width: 4.35em;
+       height: 5.35em;
+     }
+   }
+ }
+
+ :host ::ng-deep .logo {
+   z-index: 100;
+   padding: 30px 17px;
+ }
+
+ :host ::ng-deep .header .header-logo {
+   @media screen and (max-width: 1200px) {
+     img {
+       width: 100% !important;
+     }
+   }
+ }

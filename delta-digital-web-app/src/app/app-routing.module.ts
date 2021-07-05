@@ -4,11 +4,16 @@ import { MainComponent } from './components/main/main.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
 const routes: Routes = [
-  {path: '', component: MainComponent},
-  {path: 'register', component: RegistrationComponent},
-  {path: 'channels', 
-  loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule)
-}
+  { path: '', component: MainComponent },
+  { path: 'register', component: RegistrationComponent },
+  {
+    path: 'channels',
+    loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./modules/about-us/about-us.module').then(m => m.AboutUsModule)
+  }
 ];
 
 @NgModule({

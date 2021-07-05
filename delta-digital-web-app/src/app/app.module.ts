@@ -16,9 +16,7 @@ import { ChannelsModule } from './modules/channels/channels.module';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HeaderModule } from './shell/header/header.module';
 import { PopoverModule } from 'ngx-bootstrap/popover';
-
-
-
+import { AboutUsModule } from './modules/about-us/about-us.module';
 
 
 @NgModule({
@@ -38,6 +36,7 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
     BsDatepickerModule.forRoot(),
     HeaderModule,
     ChannelsModule,
+    AboutUsModule,
     PopoverModule.forRoot()
 
   ],
