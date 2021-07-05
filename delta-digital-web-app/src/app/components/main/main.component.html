@@ -4,9 +4,9 @@
 <div class="main">
     <div class="main-container">
         <div class="d-flex justify-content-between align-items-end">
-            <div  *ngIf="!isLoggedIn" class="login-contanier">
+            <div   class="login-contanier">
                 <div class="login">
-                    <form class="login-form">
+                    <form *ngIf="!isLoggedIn" class="login-form">
                         <div class="form-group">
                             <label>Էլ․ հասցե</label>
                             <input type="email" class="form-control login-form-input" aria-describedby="emailHelp">
