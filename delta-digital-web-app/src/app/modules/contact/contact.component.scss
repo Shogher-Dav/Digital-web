@@ -1,0 +1,188 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/variables.scss';
+
+
+.contact {
+
+  &-container {
+    width: 80%;
+    margin: 62px auto 0 auto;
+  }
+
+
+
+  .form-control {
+    background-color: $gray-input-bg;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 18px;
+
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $gray-placeholder;
+      /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: $gray-placeholder;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: $gray-placeholder;
+    }
+  }
+
+  .contact-btn {
+    background-color: $black-text;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 100%;
+    color: $white;
+    border-radius: 37px;
+    font-size: 31px;
+    @include adaptiv-font(31, 20);
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: .75rem .75rem;
+  }
+
+  .form-control-lg {
+    padding: 1.25rem 1rem;
+  }
+
+  .contact-info {
+    margin-left: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .contact-info-text {
+
+    &-title {
+      letter-spacing: 1.29px;
+      color: #090908;
+      text-align: center;
+      @include adaptiv-font(43, 25);
+    }
+
+    letter-spacing: 0.61px;
+    color: $light-red;
+    font-size: 20px;
+
+    i {
+      font-size: 24px;
+      margin-right: 35px;
+    }
+
+    div {
+      margin-top: 40px;
+
+      &:last-child {
+        margin-bottom: 70px;
+
+      }
+    }
+  }
+}
+
+:host ::ng-deep .header .bg-dark {
+    background-color: transparent !important;
+ 
+    @media screen and (max-width: 1200px){
+     color: transparent !important;
+   }
+  }
+ 
+  :host ::ng-deep .header .nav-link {
+    color: $black;
+ 
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+  }
+ 
+  :host ::ng-deep .header .nav-item {
+    &:hover {
+      border-bottom: 3px solid $light-red !important;
+    }
+ 
+  }
+ 
+ 
+ 
+ :host ::ng-deep .header .nav-span {
+   @media screen and (max-width: 1200px){
+     color: $light-red !important;
+   }
+ }
+
+ :host ::ng-deep .header .profile-btn {
+    background-color: #E2E2E2 !important;
+ }
+ 
+ 
+  :host ::ng-deep .triangle-container {
+    position: relative;
+    width: 6.35em;
+    height: 5.35em;
+    background: $light-red;
+    box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    margin-top: -18px;
+ 
+    @media screen and (max-width: 1200px) {
+      width: 4em;
+      height: 4em;
+    }
+ 
+  }
+ 
+  :host ::ng-deep .logo-traingle {
+    position: absolute;
+    top: 40%;
+    left: 16%;
+    width: 2em;
+    height: 2em;
+    clip: rect(2.6em, 6em, 7em, -3em);
+ 
+    @media screen and (max-width: 1200px) {
+      top: 24%;
+      left: 27%;
+    }
+ 
+    &:before {
+      content: "";
+      display: block;
+      margin: -1em;
+      height: 6.35em;
+      width: 6.35em;
+      background: $light-red;
+      box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
+      transform: scale(0.8, 1) rotate(45deg);
+ 
+      @media screen and (max-width: 1200px) {
+        width: 4.35em;
+        height: 5.35em;
+      }
+    }
+  }
+ 
+  :host ::ng-deep .logo {
+    z-index: 100;
+    padding: 30px 17px;
+  }
+ 
+  :host ::ng-deep .header .header-logo {
+    @media screen and (max-width: 1200px) {
+      img {
+        width: 100% !important;
+      }
+    }
+  }

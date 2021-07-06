@@ -17,6 +17,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HeaderModule } from './shell/header/header.module';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { AboutUsModule } from './modules/about-us/about-us.module';
+import { ContactModule } from './modules/contact/contact.module';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AboutUsModule } from './modules/about-us/about-us.module';
     HeaderModule,
     ChannelsModule,
     AboutUsModule,
-    PopoverModule.forRoot()
+    PopoverModule.forRoot(),
+    ContactModule
 
   ],
   providers: [],

@@ -485,10 +485,7 @@
     &:hover {
       border-bottom: 3px solid $light-red !important;
     }
-
   }
-
-
   :host ::ng-deep .triangle-container {
     position: relative;
     background: $dark-red;
@@ -498,8 +495,6 @@
     margin-top: -18px;
     width: 4em;
     height: 4em;
-  
-
   }
 
   :host ::ng-deep .logo-traingle {
@@ -509,7 +504,7 @@
     clip: rect(2.6em, 6em, 7em, -3em);
     top: 24%;
     left: 27%;
-  
+
 
     &:before {
       content: "";
@@ -520,7 +515,7 @@
       transform: scale(0.8, 1) rotate(45deg);
       width: 4.35em;
       height: 5.35em;
-    
+
     }
   }
 
@@ -535,5 +530,13 @@
     }
 
   }
-
+  :host ::ng-deep .header .header-search-btn {
+      color: $light-red !important; 
+  }
 }
+
+:host ::ng-deep .header .header-profile-btn {
+  background-color: white;
+}
+
+

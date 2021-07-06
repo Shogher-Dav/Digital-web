@@ -172,6 +172,13 @@
   }
 }
 
+:host ::ng-deep .header .header-search-btn {
+  color: $white;
+}
+
+:host ::ng-deep .header .header-profile-btn {
+  background-color: white;
+}
 
  :host ::ng-deep .triangle-container {
    position: relative;
