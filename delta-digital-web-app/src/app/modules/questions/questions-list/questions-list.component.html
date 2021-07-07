@@ -1,0 +1,19 @@
+<div class="questions">
+    <div class="questions-wrapper">
+        <div class="question-title-padding">
+            <div class="question-title">
+                <div class="text">
+                    <span class="title-part-1">ՀԱՃԱԽ <br>ՏՐՎՈՂ <br><span class="title-part-2">ՀԱՐՑԵՐ</span></span>
+    
+                </div>
+            </div>
+
+        </div>
+      
+        <div class=" questions row justify-content-md-center">
+            <div *ngFor="let question of questions" class="question col-sm-4">
+                <span>{{question.text}}</span>
+            </div>
+        </div>
+    </div>
+</div>

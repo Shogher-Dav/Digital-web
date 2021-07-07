@@ -278,16 +278,18 @@
 
       &-title1 {
         letter-spacing: 0px;
-
         @include adaptiv-font(62, 30);
         color: $light-red;
         text-align: center;
+        font-family: 'BraindYerevan';
       }
 
       &-title2 {
         letter-spacing: 0px;
         color: $black;
         font-size: 18px;
+        font-family: 'BraindYerevan';
+
 
       }
     }
@@ -295,64 +297,26 @@
 
   }
 
-  .questions-wrapper {
-    background-image: url('../../../assets/images/Home page/Сгруппировать\ 6482.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 40px;
-    margin-top: 8.65%;
-
-    @media screen and (max-width: 1590px) {
-      background-size: contain;
-
-    }
-
-    .questions {
-
-      padding-top: 23vw;
-
-      @media screen and (max-width: 1530px) {
-        width: 85%;
-        margin: 0 auto;
-      }
-
-      .question {
-        background-color: $footer-gray;
-        border-radius: 94px;
-        margin: 8px 130px;
-        padding: 12px 19px 20px 40px;
-        min-width: 550px;
-
-        @media screen and (max-width: 767px) {
-          margin: 8px 0;
-        }
-
-        @media screen and (max-width: 590px) {
-          min-width: 450px;
-        }
-
-        @media screen and (max-width: 490px) {
-          min-width: 250px;
-        }
-
-        p {
-          text-align: left;
-          color: $white;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          @include adaptiv-font(20, 10);
-        }
-
-      }
-    }
-  }
+ 
 
   .channels {
 
+    margin-top: 10vw;
+
+    
+
+    img {
+      @media screen and (max-width: 1200px) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
     &-container {
       background-image: url('../../../assets/images/Home page/Web\ 1920\ –\ 58.png');
-      // height: 700px;
       background-repeat: no-repeat;
       background-size: cover;
+      margin-top: 3vw;
 
 
     }
@@ -447,6 +411,8 @@
 }
 
 
+//////////////   Header styles ///////////////////////////////////////
+
 :host ::ng-deep .header .bg-dark {
   background-color: $dark-red !important;
 }
@@ -486,6 +452,7 @@
       border-bottom: 3px solid $light-red !important;
     }
   }
+
   :host ::ng-deep .triangle-container {
     position: relative;
     background: $dark-red;
@@ -530,13 +497,45 @@
     }
 
   }
+
   :host ::ng-deep .header .header-search-btn {
-      color: $light-red !important; 
+    color: $light-red !important;
   }
 }
 
 :host ::ng-deep .header .header-profile-btn {
   background-color: white;
 }
+/////////////////////////////////////////////////////
+
+
+///////////////////// Questions style ///////////////////////////
+
+:host ::ng-deep .questions-wrapper {
+  background-image: url("../../../assets/images/Home page/Сгруппировать 6482.png") !important;
+  // margin-top: 200px;
+  background-size: contain !important;
+  background-position: top !important;
+  margin-top: 16vw;
+  margin-bottom: 10vw;
+
+  .text {
+    display: none;
+  }
+
+   
+  .questions {
+    .question {
+      background-color:  $footer-gray !important;
+    }
+  
+  }
+
+}
+
+
+//////////////////////////////////////////////////////////////
+
+
 
 

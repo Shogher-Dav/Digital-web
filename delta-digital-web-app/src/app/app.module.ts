@@ -5,19 +5,25 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
-import { AppRoutingModule } from './app-routing.module';
+// Componnets
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+// Modules
+import { AppRoutingModule } from './app-routing.module';
 import { ChannelsModule } from './modules/channels/channels.module';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { HeaderModule } from './shell/header/header.module';
-import { PopoverModule } from 'ngx-bootstrap/popover';
 import { AboutUsModule } from './modules/about-us/about-us.module';
 import { ContactModule } from './modules/contact/contact.module';
+
+// ngx bootstrap
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+// import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { QuestionsModule } from './modules/questions/questions.module';
 
 
 @NgModule({
@@ -30,17 +36,18 @@ import { ContactModule } from './modules/contact/contact.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TooltipModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    BsDatepickerModule.forRoot(),
     HeaderModule,
     ChannelsModule,
     AboutUsModule,
+    ContactModule,
+    QuestionsModule,
+    // AccordionModule.forRoot(),
     PopoverModule.forRoot(),
-    ContactModule
-
+    BsDatepickerModule.forRoot(),
+    TooltipModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

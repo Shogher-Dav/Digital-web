@@ -1,0 +1,125 @@
+@import '../../../../assets/styles/variables.scss';
+@import '../../../../assets/styles/mixins.scss';
+
+.questions-wrapper {
+  background-image: url('../../../../assets/images/Questions/Копия\ Сгруппировать\ 6474.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  .question-title-padding {
+    padding-top: 6.37%;
+  }
+
+  .question-title {
+    background-image: url("../../../../assets/images/Questions/Копия\ Сгруппировать\ 6475.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 290px;
+    @include adaptiv-font(44, 25);
+    top: 10%;
+    left: 40%;
+    position: relative;
+
+    @media screen and (max-width: 992px) {
+        left: 30%;
+      }
+
+    @media screen and (max-width: 768px) {
+      height: 200px;
+    }
+
+    @media screen and (max-width: 576px) {
+      height: 175px;
+    }
+
+    @media screen and (max-width: 380px) {
+      height: 175px;
+      left: 20%;
+    }
+
+    .text {
+      top: 7%;
+      left: 5%;
+      position: absolute;
+    //   display: inline;
+
+      @media screen and (max-width: 1570px) {
+        top: 14%;
+        left: 6%;
+      }
+
+      @media screen and (max-width: 992px) {
+        left: 11%;
+      }
+
+      @media screen and (max-width: 768px) {
+        left: 8%;
+      }
+
+      @media screen and (max-width: 576px) {
+        left: 11%;
+      }
+
+      @media screen and (max-width: 380px) {
+        left: 17%;
+      }
+
+    }
+
+    .title-part-1 {
+      color: $light-red;
+    }
+
+    .title-part-2 {
+      color: black;
+    }
+  }
+
+  .questions {
+
+    padding-top: 2vw;
+    padding-bottom: 5vw;
+
+    @media screen and (max-width: 1590px) {
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    // all divs where are questions
+    div {
+      @media screen and (max-width: 680px) {
+        padding: 0 5px 10px 20px !important;
+      }
+    }
+
+    .question {
+      background-color: $questions-red;
+      border-radius: 94px;
+      margin: 8px 130px;
+      padding: 12px 19px 20px 40px;
+      min-width: 550px;
+
+      @media screen and (max-width: 767px) {
+        margin: 8px 0;
+      }
+
+      @media screen and (max-width: 590px) {
+        min-width: 450px;
+      }
+
+      @media screen and (max-width: 490px) {
+        min-width: 250px;
+      }
+
+      span {
+        text-align: left;
+        color: $white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @include adaptiv-font(20, 10);
+      }
+
+    }
+  }
+}
