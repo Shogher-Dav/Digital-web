@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChannelComponent } from './channel/channel.component';
 import { ChannelsListComponent } from './channels-list/channels-list.component';
 import { ChannelsComponent } from './channels.component';
 import { MyListComponent } from './my-list/my-list.component';
 
 const routes: Routes = [
   { path: '', component: ChannelsComponent },
-  {path: 'favourite', component: MyListComponent}
+  { path: 'favourite', component: MyListComponent },
+  { path: 'channel', component: ChannelComponent }
 ];
 
 @NgModule({

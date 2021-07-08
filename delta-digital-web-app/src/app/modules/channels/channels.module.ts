@@ -12,6 +12,7 @@ import { VgControlsModule } from '@videogular/ngx-videogular/controls';
 import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { MyListComponent } from './my-list/my-list.component';
+import { ChannelComponent } from './channel/channel.component';
 
 
 
@@ -19,7 +20,8 @@ import { MyListComponent } from './my-list/my-list.component';
   declarations: [
     ChannelsListComponent,
     ChannelsComponent,
-    MyListComponent
+    MyListComponent,
+    ChannelComponent
   ],
   imports: [
     CommonModule,
