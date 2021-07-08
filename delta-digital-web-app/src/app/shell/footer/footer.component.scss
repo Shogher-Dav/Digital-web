@@ -7,6 +7,12 @@
   &-container {
     background-color: $footer-gray;
     padding-top: 8.44%;
+
+  }
+
+  &-margin {
+    width: 95%;
+    margin: 0 auto;
   }
 
   .info {
@@ -74,8 +80,17 @@
       position: absolute;
       top: 43px;
       right: 108px;
+      cursor: pointer;
+
+      @media screen and (max-width: 500px) {
+        width: 50px;
+        top: 20px;
+        right: 53px;
+
+      }
     }
   }
+
 
   .call-icons-block {
     width: 351px;

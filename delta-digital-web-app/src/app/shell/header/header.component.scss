@@ -2,12 +2,15 @@
 @import '../../../assets/styles/mixins.scss';
 
 .header {
+
+  
   &-logo {
     margin: 12px 36px 30px 46px;
     cursor: pointer;
 
     img {
-      width: 100%;
+      // width: 100%;
+
     }
 
     @media screen and (max-width: 1200px) {

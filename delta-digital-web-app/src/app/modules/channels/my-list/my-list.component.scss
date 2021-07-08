@@ -1,6 +1,11 @@
 @import '../../../../assets/styles/mixins.scss';
 @import '../../../../assets/styles/variables.scss';
 
+.my-list {
+  background-image: url('../../../../assets/images/6466.png');
+  background-size: cover;
+}
+
 .title {
   text-align: center;
   letter-spacing: 0px;
@@ -10,82 +15,66 @@
 }
 
 :host ::ng-deep .header .bg-dark {
-    background-color: $white !important;
+  background-color: transparent !important;
+
+}
+
+:host ::ng-deep .header .nav-link {
+  color: $black;
+
+  &:hover,
+  &:focus {
+    color: $black;
   }
-  
-  :host ::ng-deep .header .nav-link {
-    color: $header-black-text;
-  
-    &:hover,
-    &:focus {
-      color: $header-black-text;
-    }
+}
+
+:host ::ng-deep .header .nav-item {
+
+  &:hover,
+  &:active {
+    border-bottom: 3px solid $light-red !important;
   }
-  
-  :host ::ng-deep .header .nav-item {
-    &:hover {
-      border-bottom: 3px solid $light-red !important;
-    }
-  
-  }
-  
-  
-  :host ::ng-deep .triangle-container {
-    position: relative;
-    width: 6.35em;
-    height: 5.35em;
-    background: white;
-    box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
-    margin-top: -18px;
-  
-    @media screen and (max-width: 1200px) {
-      width: 4em;
-      height: 4em;
-    }
-  
-  }
-  
-  :host ::ng-deep .logo-traingle {
+
+}
+
+
+:host ::ng-deep .header .header-profile-btn {
+  background-color: #E1E1E1 !important;
+}
+
+:host ::ng-deep .header-search-btn {
+  color: $black !important;
+}
+
+
+:host ::ng-deep .triangle-container {
+  background-image: url("../../../../assets/images/Контур\ 35561.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 153px;
+  width: 127px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -26px;
+
+  @media screen and (max-width: 1200px) {
+    height: 75px;
+    width: 75px;
     position: absolute;
-    top: 40%;
-    left: 16%;
-    width: 2em;
-    height: 2em;
-    clip: rect(2.6em, 6em, 7em, -3em);
-  
-    @media screen and (max-width: 1200px) {
-      top: 24%;
-      left: 27%;
-    }
-  
-    &:before {
-      content: "";
-      display: block;
-      margin: -1em;
-      height: 6.35em;
-      width: 6.35em;
-      background: white;
-      box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
-      transform: scale(0.8, 1) rotate(45deg);
-  
-      @media screen and (max-width: 1200px) {
-        width: 4.35em;
-        height: 5.35em;
-      }
-    }
+    margin-left: 45px;
+    margin-top: 0;
   }
   
-  :host ::ng-deep .logo {
-    z-index: 100;
-    padding: 30px 17px;
+  img {
+    position: absolute;
+    top: 16%;
+    left: 12%;
   }
-  
-  :host ::ng-deep .header .header-logo {
-    @media screen and (max-width: 1200px) {
-      img {
-        width: 100% !important;
-      }
-    }
-  }
+}
+
+
+:host ::ng-deep .collapse {
+  align-items: flex-start;
+}

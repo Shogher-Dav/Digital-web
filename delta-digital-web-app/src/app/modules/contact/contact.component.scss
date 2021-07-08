@@ -4,6 +4,33 @@
 
 .contact {
 
+  .title {
+    width: 70%;
+
+    &-part1 {
+      color: $black;
+      @include adaptiv-font(79, 40);
+      position: relative;
+    }
+
+    &-part2 {
+      color: $light-red;
+      @include adaptiv-font(39, 20);
+      position: absolute;
+      top: 2em;
+      left: 6em;
+    }
+
+    hr {
+      display: block;
+      height: 2px;
+      border: 0;
+      border-top: 1px solid $light-red;
+      margin: 2em 0;
+      padding: 0;
+    }
+  }
+
   &-container {
     width: 80%;
     margin: 62px auto 0 auto;
@@ -91,98 +118,98 @@
 }
 
 :host ::ng-deep .header .bg-dark {
-    background-color: transparent !important;
- 
-    @media screen and (max-width: 1200px){
-     color: transparent !important;
-   }
-  }
- 
-  :host ::ng-deep .header .nav-link {
-    color: $black;
- 
-    &:hover,
-    &:focus {
-      color: $black;
-    }
-  }
- 
-  :host ::ng-deep .header .nav-item {
-    &:hover {
-      border-bottom: 3px solid $light-red !important;
-    }
- 
-  }
- 
- 
- 
- :host ::ng-deep .header .nav-span {
-   @media screen and (max-width: 1200px){
-     color: $light-red !important;
-   }
- }
+  background-color: transparent !important;
 
- :host ::ng-deep .header .profile-btn {
-    background-color: #E2E2E2 !important;
- }
- 
- 
-  :host ::ng-deep .triangle-container {
-    position: relative;
+  @media screen and (max-width: 1200px) {
+    color: transparent !important;
+  }
+}
+
+:host ::ng-deep .header .nav-link {
+  color: $black;
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
+
+:host ::ng-deep .header .nav-item {
+  &:hover {
+    border-bottom: 3px solid $light-red !important;
+  }
+
+}
+
+
+
+:host ::ng-deep .header .nav-span {
+  @media screen and (max-width: 1200px) {
+    color: $light-red !important;
+  }
+}
+
+:host ::ng-deep .header .profile-btn {
+  background-color: #E2E2E2 !important;
+}
+
+
+:host ::ng-deep .triangle-container {
+  position: relative;
+  width: 6.35em;
+  height: 5.35em;
+  background: $light-red;
+  box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  margin-top: -18px;
+
+  @media screen and (max-width: 1200px) {
+    width: 4em;
+    height: 4em;
+  }
+
+}
+
+:host ::ng-deep .logo-traingle {
+  position: absolute;
+  top: 40%;
+  left: 16%;
+  width: 2em;
+  height: 2em;
+  clip: rect(2.6em, 6em, 7em, -3em);
+
+  @media screen and (max-width: 1200px) {
+    top: 24%;
+    left: 27%;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    margin: -1em;
+    height: 6.35em;
     width: 6.35em;
-    height: 5.35em;
     background: $light-red;
-    box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
-    margin-top: -18px;
- 
+    box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
+    transform: scale(0.8, 1) rotate(45deg);
+
     @media screen and (max-width: 1200px) {
-      width: 4em;
-      height: 4em;
-    }
- 
-  }
- 
-  :host ::ng-deep .logo-traingle {
-    position: absolute;
-    top: 40%;
-    left: 16%;
-    width: 2em;
-    height: 2em;
-    clip: rect(2.6em, 6em, 7em, -3em);
- 
-    @media screen and (max-width: 1200px) {
-      top: 24%;
-      left: 27%;
-    }
- 
-    &:before {
-      content: "";
-      display: block;
-      margin: -1em;
-      height: 6.35em;
-      width: 6.35em;
-      background: $light-red;
-      box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
-      transform: scale(0.8, 1) rotate(45deg);
- 
-      @media screen and (max-width: 1200px) {
-        width: 4.35em;
-        height: 5.35em;
-      }
+      width: 4.35em;
+      height: 5.35em;
     }
   }
- 
-  :host ::ng-deep .logo {
-    z-index: 100;
-    padding: 30px 17px;
-  }
- 
-  :host ::ng-deep .header .header-logo {
-    @media screen and (max-width: 1200px) {
-      img {
-        width: 100% !important;
-      }
+}
+
+:host ::ng-deep .logo {
+  z-index: 100;
+  padding: 30px 17px;
+}
+
+:host ::ng-deep .header .header-logo {
+  @media screen and (max-width: 1200px) {
+    img {
+      width: 100% !important;
     }
   }
+}
