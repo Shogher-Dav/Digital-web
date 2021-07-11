@@ -25,6 +25,11 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { QuestionsModule } from './modules/questions/questions.module';
 
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthInterceptor } from './core/services/auth.interceptor';
+
+
+
 
 @NgModule({
   declarations: [
@@ -48,8 +53,16 @@ import { QuestionsModule } from './modules/questions/questions.module';
     PopoverModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TooltipModule.forRoot(),
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
