@@ -16,6 +16,7 @@ const OAUTH_SECRET = 'dd_secret';
 })
 export class AuthService {
   private baseUrl = environment.baseUrl;
+  private _isAuthenticated = false;
 
   private http_options = {
     headers: new HttpHeaders({
@@ -40,48 +41,90 @@ export class AuthService {
     console.log(message);
   }
 
+  get isAuthenticated() {
+    return this._isAuthenticated;
+  }
+  set isAuthenticated(isAuth) {
+    this._isAuthenticated = isAuth;
+    
+  }
+
 
   constructor(private httpClient: HttpClient) {}
 
 
-  getToken(): any {
+  getTokenLocalStr(): any {
     return localStorage.getItem(ACCESS_TOKEN);
   }
 
-  getRefreshToken(): any {
+  getRefreshTokenLocalStr(): any {
     return localStorage.getItem(REFRESH_TOKEN);
   }
 
-  saveToken(token: string): void {
+  saveTokenLocalStr(token: string): void {
     localStorage.setItem(ACCESS_TOKEN, token);
   }
 
-  saveRefreshToken(refreshToken: string): void {
+  saveRefreshTokenLocalStr(refreshToken: string): void {
     localStorage.setItem(REFRESH_TOKEN, refreshToken);
   }
 
-  removeToken(): void {
+  removeTokenLocalStr(): void {
     localStorage.removeItem(ACCESS_TOKEN);
   }
 
-  removeRefreshToken(): void {
+  removeRefreshTokenLocalStr(): void {
     localStorage.removeItem(REFRESH_TOKEN);
   }
 
-  getIsRememberPasword() {
+  getIsRememberPaswordLocalStr() {
     return localStorage.getItem('isRememberPassword');
   }
 
-  setIsRememberPassword(isRemember: string) {
+  saveIsRememberPasswordLocalStr(isRemember: string) {
     localStorage.setItem('isRememberPassword', isRemember);
   }
 
-  getIsAuthenticated() {
+  getIsAuthenticatedLocalStr() {
     return localStorage.getItem('isAuthenticated');
   }
 
-  setIsAuthenticated(isAuthenticated: string) {
+  saveIsAuthenticatedLocalStr(isAuthenticated: string) {
     localStorage.setItem('isAuthenticated', isAuthenticated);
+  }
+
+
+  getTokenSessionStr(): any {
+    return sessionStorage.getItem(ACCESS_TOKEN);
+  }
+
+  getRefreshTokenSessionStr(): any {
+    return sessionStorage.getItem(REFRESH_TOKEN)
+  }
+
+  saveTokenSessionStr(token: string): void {
+    sessionStorage.setItem(ACCESS_TOKEN, token);
+  }
+
+  saveRefreshTokenSessionStr(refreshToken: string): void {
+    sessionStorage.setItem(REFRESH_TOKEN, refreshToken);
+  }
+
+  removeTokenSessionStr(): void {
+    sessionStorage.removeItem(ACCESS_TOKEN);
+  }
+
+  removeRefreshTokenSessionStr(): void {
+    sessionStorage.removeItem(REFRESH_TOKEN);
+  }
+
+
+  getIsAuthenticatedSessionStr() {
+    return sessionStorage.getItem('isAuthenticated');
+  }
+
+  saveIsAuthenticatedSessionStr(isAuthenticated: string) {
+    sessionStorage.setItem('isAuthenticated', isAuthenticated);
   }
 
   getChannels() {
@@ -107,8 +150,8 @@ export class AuthService {
 
   login(userCredentials: any): Observable<any> {
 
-    this.removeToken();
-    this.removeRefreshToken();
+    this.removeTokenLocalStr();
+    this.removeRefreshTokenLocalStr();
     const body = new HttpParams()
       .set('scope', 'read')
       .set('grant_type', 'password')
@@ -119,10 +162,17 @@ export class AuthService {
     return this.httpClient.post<any>(`${this.baseUrl}/oauth/token`, body, this.http_options)
       .pipe(
         tap(res => {
-          const isRemeberPassword = this.getIsRememberPasword();
+          const isRemeberPassword = this.getIsRememberPaswordLocalStr();
           if(isRemeberPassword && JSON.parse(isRemeberPassword)){
-            this.saveToken(res.access_token);
-            this.saveRefreshToken(res.refresh_token);
+            this.saveTokenLocalStr(res.access_token);
+            this.saveRefreshTokenLocalStr(res.refresh_token);
+            this.saveIsAuthenticatedLocalStr('true');
+            this.isAuthenticated = true;
+          } else {
+            this.saveTokenSessionStr(res.access_token);
+            this.saveRefreshTokenSessionStr(res.refresh_token);
+            this.saveIsAuthenticatedSessionStr('true');
+            this.isAuthenticated = true;
           }
         }),
         catchError(AuthService.handleError)
@@ -130,18 +180,25 @@ export class AuthService {
   }
 
   refreshToken(refreshData: any): Observable<any> {
-    this.removeToken();
-    this.removeRefreshToken();
+    this.removeTokenLocalStr();
+    this.removeRefreshTokenLocalStr();
     const body = new HttpParams()
       .set('refresh_token', refreshData.refresh_token)
       .set('grant_type', 'refresh_token');
     return this.httpClient.post<any>(`${this.baseUrl}/oauth/token`, body, this.http_options)
       .pipe(
         tap(res => {
-          const isRemeberPassword = this.getIsRememberPasword();
+          const isRemeberPassword = this.getIsRememberPaswordLocalStr();
           if(isRemeberPassword && JSON.parse(isRemeberPassword)){
-            this.saveToken(res.access_token);
-            this.saveRefreshToken(res.refresh_token);
+            this.saveTokenLocalStr(res.access_token);
+            this.saveRefreshTokenLocalStr(res.refresh_token);
+            this.saveIsAuthenticatedLocalStr('true')
+
+          } else {
+            this.saveTokenSessionStr(res.access_token);
+            this.saveRefreshTokenSessionStr(res.refresh_token);
+            this.saveIsAuthenticatedSessionStr('true')
+
           }
 
         }),
@@ -150,10 +207,10 @@ export class AuthService {
   }
 
   logout(): void {
-    this.removeToken();
-    this.removeRefreshToken();
-    this.setIsAuthenticated('false');
-    this.setIsRememberPassword('false');
+    this.removeTokenLocalStr();
+    this.removeRefreshTokenLocalStr();
+    this.saveIsAuthenticatedLocalStr('false');
+    this.saveIsRememberPasswordLocalStr('false');
   }
 
   // register(data: any): Observable<any> {

@@ -13,10 +13,19 @@ export class AuthInterceptor implements HttpInterceptor {
         private router: Router
     ) { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        let token: any;
+        let refreshToken: any;
+        
+        if(this.authService.getTokenLocalStr() && this.authService.getRefreshTokenLocalStr){
+            token = this.authService.getTokenLocalStr();
+            refreshToken = this.authService.getRefreshTokenLocalStr();
 
-        const token = this.authService.getToken();
-        const refreshToken = this.authService.getRefreshToken();
+        } else {
+            token = this.authService.getTokenSessionStr();
+            refreshToken = this.authService.getRefreshTokenSessionStr();
+        }
 
+        
         if (token) {
             req = req.clone({
                 setHeaders: {

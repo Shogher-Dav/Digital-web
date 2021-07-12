@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   isChecked = false;
   showPassword = false;
 
-  isAuthenticated: boolean;
+  isAuthenticated: any;
   loginForm: FormGroup;
   passwordValidationPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/])[A-Za-z-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/]{8,}/
 
@@ -30,24 +30,14 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const isRemembered = this.authService.getIsRememberPasword();
-    if (isRemembered) {
-      this.isChecked = JSON.parse(isRemembered);
-    }
-    const isAuthenticated = this.authService.getIsRememberPasword();
-    if (isAuthenticated) {
-      this.isAuthenticated = JSON.parse(isAuthenticated);
-    }
+  this.setIsAuthenticated();
 
   }
 
   login() {
-    console.log(this.loginForm.valid);
     // if (this.loginForm.valid) {
     this.authService.login(this.loginForm.value).subscribe(res => {
-      this.authService.setIsAuthenticated('true');
-      this.router.navigate(['']);
-
+      location.reload();
     });
     // }
 
@@ -65,11 +55,36 @@ export class MainComponent implements OnInit {
 
   rememberPassword() {
     this.isChecked = !this.isChecked
-    this.authService.setIsRememberPassword(`${this.isChecked}`);
+    this.authService.saveIsRememberPasswordLocalStr(`${this.isChecked}`);
   }
 
   showPasswordToogle() {
     this.showPassword = !this.showPassword;
+  }
+
+  getChannels() {
+    this.authService.getChannels().subscribe();
+  }
+
+  setIsAuthenticated() {
+    const isRemembered = this.authService.getIsRememberPaswordLocalStr();
+    const isAuthLocal =  this.authService.getIsAuthenticatedLocalStr();
+    const isAuthSession  = this.authService.getIsAuthenticatedSessionStr();
+
+    if (isRemembered) {
+      this.isChecked = JSON.parse(isRemembered);
+    }
+    if(this.isChecked) {
+      if(isAuthLocal) {
+      this.isAuthenticated = JSON.parse(isAuthLocal);
+      } 
+
+    } else {
+      if(isAuthSession) {
+        this.isAuthenticated = JSON.parse(isAuthSession);
+      }
+    }
+   
   }
 
 }

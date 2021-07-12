@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,12 @@ export class HeaderComponent implements OnInit {
   navbarOpen = false;
   searchOpen = false;
   searchText = new FormControl('');
-  
-  // temporary variable, need to be removed or changed
-  isLoggedIn = true;
-  constructor() { }
+  isLoggedIn = false;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.setIsAuthenticated();
   }
 
 
@@ -25,6 +26,24 @@ export class HeaderComponent implements OnInit {
   toggleSearch(){
     this.searchOpen = !this.searchOpen;
     
+  }
+
+  setIsAuthenticated() {
+    const isRemembered = this.authService.getIsRememberPaswordLocalStr();
+    const isAuthLocal =  this.authService.getIsAuthenticatedLocalStr();
+    const isAuthSession  = this.authService.getIsAuthenticatedSessionStr();
+    
+    if(isRemembered) {
+      if(isAuthLocal) {
+      this.isLoggedIn = JSON.parse(isAuthLocal);
+      } 
+
+    } else {
+      if(isAuthSession) {
+        this.isLoggedIn = JSON.parse(isAuthSession);
+      }
+    }
+   
   }
 
 }
