@@ -1,0 +1,144 @@
+@import "../../../assets/styles/mixins.scss";
+@import "../../../assets/styles/variables.scss";
+
+.package {
+  background-image: url("../../../assets/images/Home page/Сгруппировать\ 887.png");
+  background-size: cover;
+  padding: 5.42vw;
+  margin-top: -4vw;
+
+
+  &-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .title {
+    color: $white-text3;
+    background: #807B7B;
+    box-shadow: 0px 3px 6px #00000047;
+    border-radius: 43px;
+    @include adaptiv-font(63, 27);
+    max-width: 595px;
+    padding: .62em 0em;
+    text-align: center;
+    margin: 0 auto;
+
+  }
+
+  &-details {
+    color: $gray-text;
+
+    .card {
+      margin-top: 3.65vw;
+      margin-bottom: 7.3vw;
+      border-radius: 59px;
+
+    }
+
+
+    .card-body {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .devices-text {
+      @include adaptiv-font(71, 25);
+    }
+
+    .devices-number {
+      @include adaptiv-font(129, 20);
+    }
+
+    .gallery-text {
+      color: $dark-red;
+      @include adaptiv-font(87, 21);
+    }
+
+    .channel-text {
+      @include adaptiv-font(55, 16);
+    }
+
+    .package-buy-btn {
+      background: $light-red 0% 0% no-repeat padding-box;
+      box-shadow: 0px 3px 6px #00000029;
+      border-radius: 35px;
+      color: $white;
+      padding: .46em 1.65em;
+      @include adaptiv-font(110, 30);
+      line-height: .7em;
+
+    }
+
+    .package-cost {
+      @include adaptiv-font(55, 20);
+
+    }
+  }
+}
+
+
+:host ::ng-deep .header .bg-dark {
+    background-color: transparent !important;
+  
+  }
+  
+  :host ::ng-deep .header .nav-link {
+    color: $black;
+  
+    &:hover,
+    &:focus {
+      color: $black;
+    }
+  }
+  
+  :host ::ng-deep .header .nav-item {
+  
+    &:hover,
+    &:active {
+      border-bottom: 3px solid $light-red !important;
+    }
+  
+  }
+  
+  
+  :host ::ng-deep .header .header-profile-btn {
+    background-color: #E1E1E1 !important;
+  }
+  
+  :host ::ng-deep .header-search-btn {
+    color: $black !important;
+  }
+  
+  
+  :host ::ng-deep .triangle-container {
+    background-image: url("../../../assets/images/Контур\ 35561.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 153px;
+    width: 127px;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -26px;
+  
+    @media screen and (max-width: 1200px) {
+      height: 75px;
+      width: 75px;
+      position: absolute;
+      margin-left: 45px;
+      margin-top: 0;
+    }
+    
+    img {
+      position: absolute;
+      top: 16%;
+      left: 12%;
+    }
+  }
+  
+  
+  :host ::ng-deep .collapse {
+    align-items: flex-start;
+  }

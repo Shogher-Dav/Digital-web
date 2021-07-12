@@ -27,6 +27,7 @@ import { QuestionsModule } from './modules/questions/questions.module';
 
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AuthInterceptor } from './core/services/auth.interceptor';
+import { PackageComponent } from './components/package/package.component';
 
 
 
@@ -37,6 +38,7 @@ import { AuthInterceptor } from './core/services/auth.interceptor';
     FooterComponent,
     MainComponent,
     RegistrationComponent,
+    PackageComponent,
   ],
   imports: [
     BrowserModule,

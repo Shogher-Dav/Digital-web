@@ -78,4 +78,8 @@ export class MainComponent implements OnInit {
 
   }
 
+  openPackage(): void {
+    this.router.navigateByUrl('/package');
+  }
+
 }
