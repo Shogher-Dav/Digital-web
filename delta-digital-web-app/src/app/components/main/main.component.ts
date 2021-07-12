@@ -30,26 +30,17 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  this.setIsAuthenticated();
+    this.setIsAuthenticated();
 
   }
 
   login() {
-    // if (this.loginForm.valid) {
-    this.authService.login(this.loginForm.value).subscribe(res => {
-      location.reload();
-    });
-    // }
+    if (this.loginForm.valid) {
+      this.authService.login(this.loginForm.value).subscribe(res => {
+        location.reload();
+      });
+    }
 
-    // const userCredentials = {
-    //   birthDate: null,
-    //   email: 'name.surname@gmail.com',
-    //   name: 'Name',
-    //   password: 'helloH123',
-    //   phoneNumber: '094789856',
-    //   surname: 'Surname'
-
-    // }
 
   }
 
@@ -62,29 +53,29 @@ export class MainComponent implements OnInit {
     this.showPassword = !this.showPassword;
   }
 
-  getChannels() {
-    this.authService.getChannels().subscribe();
-  }
+  // getChannels() {
+  //   this.authService.getChannels().subscribe();
+  // }
 
   setIsAuthenticated() {
     const isRemembered = this.authService.getIsRememberPaswordLocalStr();
-    const isAuthLocal =  this.authService.getIsAuthenticatedLocalStr();
-    const isAuthSession  = this.authService.getIsAuthenticatedSessionStr();
+    const isAuthLocal = this.authService.getIsAuthenticatedLocalStr();
+    const isAuthSession = this.authService.getIsAuthenticatedSessionStr();
 
     if (isRemembered) {
       this.isChecked = JSON.parse(isRemembered);
     }
-    if(this.isChecked) {
-      if(isAuthLocal) {
-      this.isAuthenticated = JSON.parse(isAuthLocal);
-      } 
+    if (this.isChecked) {
+      if (isAuthLocal) {
+        this.isAuthenticated = JSON.parse(isAuthLocal);
+      }
 
     } else {
-      if(isAuthSession) {
+      if (isAuthSession) {
         this.isAuthenticated = JSON.parse(isAuthSession);
       }
     }
-   
+
   }
 
 }
