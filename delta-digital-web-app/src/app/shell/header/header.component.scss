@@ -71,6 +71,11 @@
     }
   }
 
+  .nav-link-active{
+    border-bottom: 3px solid $white;
+
+  }
+
   .bg-dark {
     // background-color: $dark-red !important;
 

@@ -3,7 +3,8 @@
 
         <nav class="navbar navbar-expand-xl navbar-dark">
             <div class="collapse-block" [ngClass]="{ 'bg-gray': navbarOpen }">
-                <button class="navbar-btn" (click)="toggleNavbar()" class="navbar-toggler" type="button" data-toggle="collapse">
+                <button class="navbar-btn" (click)="toggleNavbar()" class="navbar-toggler" type="button"
+                    data-toggle="collapse">
                     <i class="fas fa-bars nav-span"></i>
                 </button>
                 <a *ngIf="!navbarOpen" class="navbar-brand header-logo">
@@ -18,22 +19,28 @@
                 <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item gray-item">
-                            <a routerLink="/" class="nav-link">Գլխավոր</a>
+                            <a
+                                routerLink="/"
+                                routerLinkActive="nav-link-active"
+                                class="nav-link"
+                                [routerLinkActiveOptions]="{exact:true}" 
+                            >Գլխավոր</a>
                         </li>
                         <li class="nav-item gray-item" *ngIf="isLoggedIn">
-                            <a routerLink="/channels" class="nav-link">Հեռուստալիքներ</a>
+                            <a routerLink="/channels" routerLinkActive="nav-link-active"
+                                class="nav-link">Հեռուստալիքներ</a>
                         </li>
                         <li class="nav-item gray-item" *ngIf="isLoggedIn">
                             <a class="nav-link">Տեսադարան</a>
                         </li>
                         <li class="nav-item gray-item">
-                            <a routerLink="/about" class="nav-link">Մեր մասին</a>
+                            <a routerLink="/about" routerLinkActive="nav-link-active" class="nav-link">Մեր մասին</a>
                         </li>
                         <li class="nav-item gray-item">
-                            <a routerLink="/contact" class="nav-link">Կապ</a>
+                            <a routerLink="/contact" routerLinkActive="nav-link-active" class="nav-link">Կապ</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/questions" class="nav-link">Հարցեր</a>
+                            <a routerLink="/questions" routerLinkActive="nav-link-active" class="nav-link">Հարցեր</a>
                         </li>
                     </ul>
                 </div>

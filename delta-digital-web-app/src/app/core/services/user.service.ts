@@ -17,22 +17,9 @@ export class UserService {
   registerUser(user: IUser): Observable<any> {
   return this.httpClient.post(`${this.baseUrl}/user/register`, user)
   .pipe(
-    catchError(this.handleError)
+    // catchError(this.handleError)
   )
     
   }
 
-    // Error 
-    handleError(error: HttpErrorResponse) {
-      let errorMessage = '';
-      if (error.error instanceof ErrorEvent) {
-        // Handle client error
-        errorMessage = error.error.message;
-      } else {
-        // Handle server error
-        errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-      }
-      console.log(errorMessage);
-      return throwError(errorMessage);
-    }
 }

@@ -1,9 +1,9 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import {  HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -14,15 +14,15 @@ export class AuthInterceptor implements HttpInterceptor {
     ) { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let token: any;
-        let refreshToken: any;
+        // let refreshToken: any;
         
         if(this.authService.getTokenLocalStr() && this.authService.getRefreshTokenLocalStr){
             token = this.authService.getTokenLocalStr();
-            refreshToken = this.authService.getRefreshTokenLocalStr();
+            // refreshToken = this.authService.getRefreshTokenLocalStr();
 
         } else {
             token = this.authService.getTokenSessionStr();
-            refreshToken = this.authService.getRefreshTokenSessionStr();
+            // refreshToken = this.authService.getRefreshTokenSessionStr();
         }
 
         
@@ -52,21 +52,7 @@ export class AuthInterceptor implements HttpInterceptor {
                     console.log('event--->>>', event);
                 }
                 return event;
-            }),
-            catchError((error: HttpErrorResponse) => {
-                console.log(error.error.error);
-                if (error.status === 401) {
-                    if (error.error.error === 'invalid_token') {
-                        this.authService.refreshToken({ refresh_token: refreshToken })
-                            .subscribe(() => {
-                                location.reload();
-                            });
-                    } else {
-                        this.router.navigate(['login']).then(_ => console.log('redirect to login'));
-                    }
-                }
-                return throwError(error);
-            }));
+            }))
     }
 
 }

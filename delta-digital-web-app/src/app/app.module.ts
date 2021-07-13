@@ -26,8 +26,9 @@ import { PopoverModule } from 'ngx-bootstrap/popover';
 import { QuestionsModule } from './modules/questions/questions.module';
 
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { AuthInterceptor } from './core/services/auth.interceptor';
 import { PackageComponent } from './components/package/package.component';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 
 
 
@@ -62,6 +63,11 @@ import { PackageComponent } from './components/package/package.component';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorHandlerInterceptor,
       multi: true
     }
   ],
