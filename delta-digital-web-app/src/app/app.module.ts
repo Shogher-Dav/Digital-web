@@ -21,6 +21,8 @@ import { ContactModule } from './modules/contact/contact.module';
 // ngx bootstrap
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+
+
 // import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { QuestionsModule } from './modules/questions/questions.module';
@@ -29,6 +31,7 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { PackageComponent } from './components/package/package.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
+import { GalleryModule } from './modules/gallery/gallery.module';
 
 
 
@@ -52,11 +55,12 @@ import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.inter
     AboutUsModule,
     ContactModule,
     QuestionsModule,
+    HttpClientModule,
     // AccordionModule.forRoot(),
     PopoverModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TooltipModule.forRoot(),
-    HttpClientModule
+    GalleryModule
 
   ],
   providers: [

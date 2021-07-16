@@ -134,15 +134,16 @@
 
 
   &-profile-img {
-    width: 73px;
-    height: 73px;
-    margin: 0 6.8%;
+    width: 6em;
+    height: 4em;
+    margin: 0 3.8%;
+    background-image: url('../../../assets/images/4486.png');
+    background-repeat: no-repeat;
+    background-size: contain;
 
-    @media screen and (max-width: 1200px) {
-      width: 30px;
-      height: 30px;
-      margin-right: 20px;
-
+    @media screen and (max-width: 992px) {
+      width: 4em;
+      height: 2em;
     }
   }
 

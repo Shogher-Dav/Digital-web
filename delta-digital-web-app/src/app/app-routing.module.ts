@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { PackageComponent } from './components/package/package.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { GalleryComponent } from './modules/gallery/gallery.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'package', component: PackageComponent },
-
   {
     path: 'channels',
-    loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule)
+    loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule),
+    
   },
   {
     path: 'about',
@@ -24,7 +25,13 @@ const routes: Routes = [
   {
     path: 'questions',
     loadChildren: () => import('./modules/questions/questions.module').then(m => m.QuestionsModule)
-  }
+  },
+  {
+    path: 'gallery',
+    loadChildren: () => import('./modules/gallery/gallery.module').then(m => m.GalleryModule)
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
+
 ];
 
 @NgModule({

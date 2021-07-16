@@ -1,0 +1,186 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/variables.scss';
+
+.gallery {
+
+  .carousel-caption {
+    left: 3%;
+    text-align: unset;
+    @include adaptiv-font(44, 15);
+  }
+
+  .movie {
+    width: 87%;
+    margin: 0 auto;
+    margin-bottom: 8.7vw;
+    margin-top: 7.45vw;
+    color: $dark-red;
+    @include adaptiv-font(39, 15);
+
+
+    .card {
+
+      img {
+        @media screen and(max-width: 992px) {
+          width: 50%;
+        }
+      }
+
+      span {
+        margin-top: 20px;
+      }
+    }
+
+    .gallery-options {
+      padding: 2% 2%;
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 8.4em;
+
+      .gallery-width-sm {
+        @media screen and (max-width: 500px) {
+          width: 50px;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        border-radius: 10px
+      }
+    }
+
+    .child-channel {
+      @media screen and (max-width: 992px) {
+        padding-top: 18%;
+      }
+    }
+  }
+
+  .gallery-active {
+    border-bottom: 3px solid $dark-red;
+    padding-bottom: 15px;
+  }
+
+  .gallery-margin {
+    margin-top: 6vw;
+  }
+
+  .gallery-label {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    img {
+      width: 60px;
+      margin: 20px auto;
+    }
+  }
+
+  .label-text {
+    color: $light-red;
+    @include adaptiv-font(68, 28);
+    margin-left: 5px;
+  }
+
+  .movie-items {
+    img {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+  }
+}
+
+:host ::ng-deep .header .bg-dark {
+  // background-color: transparent !important;
+  background-image: none;
+  background-color: transparent !important;
+  border-radius: 0px;
+  border: 0;
+  box-shadow: none;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+}
+
+:host ::ng-deep .header .nav-link {
+  color: $white;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+:host ::ng-deep .header .nav-item {
+
+  &:hover,
+  &:active {
+    border-bottom: 3px solid $dark-red !important;
+  }
+
+}
+
+
+:host ::ng-deep .header .header-profile-btn {
+  background-color: $white !important;
+}
+
+:host ::ng-deep .header-search-btn {
+  color: $white !important;
+}
+
+
+:host ::ng-deep .triangle-container {
+  background-image: url("../../../assets/images/Контур\ 35561.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 153px;
+  width: 127px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -32px;
+
+  @media screen and (max-width: 1200px) {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    margin-left: 45px;
+    margin-top: -10px;
+  }
+
+  img {
+    position: absolute;
+    top: 16%;
+    left: 12%;
+  }
+}
+
+
+:host ::ng-deep .navbar-collapse {
+  align-items: flex-start;
+  // margin-top: -72px !important;
+}
+
+:host ::ng-deep .nav-span {
+  color: $white !important;
+}
+
+:host ::ng-deep .bg-gray {
+  top: -10px !important;
+  left: -11px !important;
+
+}
+
+:host ::ng-deep .header .nav-link-active{
+  border-bottom: 3px solid $dark-red !important;
+
+}
+
+

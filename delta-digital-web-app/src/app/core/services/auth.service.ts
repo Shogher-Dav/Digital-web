@@ -73,6 +73,9 @@ export class AuthService {
   saveIsRememberPasswordLocalStr(isRemember: string) {
     localStorage.setItem('isRememberPassword', isRemember);
   }
+  removeIsRememberPasswordLocalStr(): void {
+    sessionStorage.removeItem('isRememberPassword');
+  }
 
   getIsAuthenticatedLocalStr() {
     return localStorage.getItem('isAuthenticated');
@@ -80,6 +83,10 @@ export class AuthService {
 
   saveIsAuthenticatedLocalStr(isAuthenticated: string) {
     localStorage.setItem('isAuthenticated', isAuthenticated);
+  }
+
+  removeIsAuthenticatedLocalStr(): void {
+    sessionStorage.removeItem('isAuthenticated');
   }
 
 
@@ -116,6 +123,13 @@ export class AuthService {
     sessionStorage.setItem('isAuthenticated', isAuthenticated);
   }
 
+  removeIsAuthenticatedSessionStr(): void {
+    sessionStorage.removeItem('isAuthenticated');
+  }
+
+  
+
+
   getChannels() {
     return this.httpClient.get(`${this.baseUrl}/api/delta-digital-media-microservice/channel/channels`);
   }
@@ -141,6 +155,8 @@ export class AuthService {
 
     this.removeTokenLocalStr();
     this.removeRefreshTokenLocalStr();
+    this.removeIsAuthenticatedLocalStr();
+    this.removeIsRememberPasswordLocalStr();
     const body = new HttpParams()
       .set('scope', 'read')
       .set('grant_type', 'password')
@@ -171,6 +187,8 @@ export class AuthService {
   refreshToken(refreshData: any): Observable<any> {
     this.removeTokenLocalStr();
     this.removeRefreshTokenLocalStr();
+    this.removeIsAuthenticatedLocalStr();
+    this.removeIsRememberPasswordLocalStr();
     const body = new HttpParams()
       .set('refresh_token', refreshData.refresh_token)
       .set('grant_type', 'refresh_token');

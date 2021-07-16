@@ -10,7 +10,6 @@
                 <a *ngIf="!navbarOpen" class="navbar-brand header-logo">
                     <div class="triangle-container">
                         <img class="logo" routerLink="/" src="../../../assets/images/logo-small.png" alt="logo">
-
                         <div class="logo-traingle ">
                         </div>
                     </div>
@@ -31,7 +30,7 @@
                                 class="nav-link">Հեռուստալիքներ</a>
                         </li>
                         <li class="nav-item gray-item" *ngIf="isLoggedIn">
-                            <a class="nav-link">Տեսադարան</a>
+                            <a class="nav-link" routerLink="/gallery" routerLinkActive="nav-link-active">Տեսադարան</a>
                         </li>
                         <li class="nav-item gray-item">
                             <a routerLink="/about" routerLinkActive="nav-link-active" class="nav-link">Մեր մասին</a>
@@ -52,7 +51,8 @@
                 <input *ngIf="searchOpen" class="form-control mr-sm-2 header-search-input" type="search"
                     placeholder="Search" aria-label="Search" [formControl]="searchText">
                 <button class="btn  my-2 my-sm-0 header-profile-btn" type="submit">Իմ հաշիվը</button>
-                <img class="header-profile-img" src="../../../assets/images/Сгруппировать 3394.png" alt="">
+                <div class="header-profile-img"></div>
+                <!-- <img class="header-profile-img" src="../../../assets/images/Сгруппировать 3394.png" alt=""> -->
             </form>
         </div>
 

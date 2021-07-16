@@ -19,14 +19,15 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    let refreshToken: any;
+    // let refreshToken: any;
 
-    if (this.authService.getRefreshTokenLocalStr) {
-      refreshToken = this.authService.getRefreshTokenLocalStr();
+    // if (this.authService.getRefreshTokenLocalStr) {
+    //   refreshToken = this.authService.getRefreshTokenLocalStr();
 
-    } else {
-      refreshToken = this.authService.getRefreshTokenSessionStr();
-    }
+    // } else {
+    //   refreshToken = this.authService.getRefreshTokenSessionStr();
+    // }
+    
     return next.handle(request)
       .pipe(
         retry(1),
@@ -39,20 +40,19 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
             // server-side error
 
             if (error.status === 401) {
-              if (error.error.error === 'invalid_token') {
-                this.authService.refreshToken({ refresh_token: refreshToken })
-                  .subscribe(() => {
-                    location.reload();
-                  });
-              } else {
+              // if (error.error.error === 'invalid_token') {
+              //   this.authService.refreshToken({ refresh_token: refreshToken })
+              //     .subscribe(() => {
+              //       location.reload();
+              //     });
+              // } else {
                 window.alert('Wrong email or password');
-                this.router.navigate(['']).then(_ => console.log('redirect to login'));
+                // this.router.navigate(['']).then(_ => console.log('redirect to login'));
                 return throwError(errorMessage);
-              }
+              // }
             }
             errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
           }
-          console.log(errorMessage);
           window.alert('Something bad happen, please try again');
           return throwError(errorMessage);
         })
