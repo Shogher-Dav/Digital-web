@@ -1,0 +1,8 @@
+<div class="movie-items  row ">
+    <div *ngFor="let item of selectedTypeMovies" class="col-sm-4">
+        <div>
+            <img [src]="item.img" alt="">
+        </div>
+        <span>{{item.name}}</span>
+    </div>
+</div>

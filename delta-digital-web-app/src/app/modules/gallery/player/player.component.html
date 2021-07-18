@@ -1,0 +1,36 @@
+<div class="movie-player">
+    <app-header></app-header>
+    <div class="movie-player-container">
+
+        <div>
+            <vg-player class="player">
+                <video id="singleVideo" preload="auto" width='150' height='100' controls>
+                    <source src="http://static.videogular.com/assets/videos/videogular.mp4" type="video/mp4">
+                </video>
+            </vg-player>
+        </div>
+        <div class="info">
+            <div class="name">Սերիալի անվանումը</div>
+            <div class="series">2020. 100 Series</div>
+            <div class="details d-flex ">
+                <div *ngIf = "isSerialPage" class="gray-btn-container" routerLink="series" routerLinkActive="gray-btn-active">
+                    <div class="gray-btn">Սերիաներ</div>
+                </div>
+                <div class="gray-btn-container" routerLink="similar" routerLinkActive='gray-btn-active'>
+                    <div class="gray-btn">Նման</div>
+                </div>
+                <div class="gray-btn-container" routerLink='tvabout' routerLinkActive='gray-btn-active'>
+                    <div class="gray-btn">Նկարագրություն</div>
+                </div>
+            </div>
+            <div *ngIf = "isSerialPage" class="seasons d-flex">
+                <!-- Must be with *ngFor -->
+                <div class="season">Սեզոն 1</div>
+                <div class="season">Սեզոն 2</div>
+                <div class="season">Սեզոն 3</div>
+            </div>
+        </div>
+        <router-outlet></router-outlet>
+     
+    </div>
+</div>

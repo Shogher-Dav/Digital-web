@@ -1,0 +1,32 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/variables.scss';
+
+.gallery-margin {
+    margin-top: 6vw;
+ 
+  }
+
+  .gallery-label {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    img {
+      width: 60px;
+      margin: 20px auto;
+    }
+  }
+
+  .label-text {
+    color: $light-red;
+    @include adaptiv-font(68, 28);
+    margin-left: 5px;
+  }
+
+  .movie-items {
+    img {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+  }

@@ -1,0 +1,18 @@
+@import '../../../../../assets/styles/mixins.scss';
+@import '../../../../../assets/styles/variables.scss';
+
+
+.about {
+  color: $gray-text;
+  @include adaptiv-font(26, 12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .card {
+    padding: 8em 6em;
+    text-align: left;
+
+    @media screen and (max-width: 992px) {
+        padding: 3em 1.5em;
+    }
+  }
+}

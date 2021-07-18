@@ -2,9 +2,7 @@
     <app-header></app-header>
 
     <carousel [showIndicators]="false" [isAnimated]="true">
-
         <slide>
-
             <img src="../../../assets/images/component.png" alt="first slide" style="display: block; width: 100%;">
             <div class="carousel-caption d-none d-md-block">
                 <h3>Թոփ Տեսանյութեր</h3>
@@ -28,8 +26,8 @@
         <div class="row justify-content-around ">
             <div *ngFor="let type of movieTypes" class="card gallery-options">
                 <div (click)="chooseMovieType(type.name, type.img)" class=" gallery-options-width-sm"
-                    [ngClass]="{'child-channel' : type.name=='Մանկական',
-                    'gallery-active': type.name === selectedMovieTypeName}">
+                    [ngClass]="type.name=='Մանկական' ? 'child-channel' :  ''" 
+                    [routerLink]="type.url" routerLinkActive="gallery-active">
                     <img [src]="type.img" alt="">
                     <div>
                         <span>{{type.name}}</span>
@@ -38,7 +36,6 @@
             </div>
         </div>
         <div *ngIf="!isSelectedType">
-
             <div *ngFor="let type of movieTypes">
                 <div class="d-flex align-items-center gallery-margin">
                     <div class="card gallery-label">
@@ -46,7 +43,7 @@
                     </div>
                     <span class="label-text">{{type.name}}</span>
                 </div>
-                <div class="movie-items  row ">
+                <div class="movie-items  row">
                     <div *ngFor="let item of movies" class="col-sm">
                         <div>
                             <img [src]="item.img" alt="">
@@ -55,31 +52,18 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
-        <div *ngIf="isSelectedType">
+        <!-- <div *ngIf="isSelectedType">
             <div class="d-flex align-items-center  gallery-margin">
                 <div class="card gallery-label">
                     <img [src]='selectedTypeImg' alt="">
                 </div>
                 <span class="label-text">{{selectedMovieTypeName}}</span>
-            </div>
+            </div> -->
 
-            <!-- Add infinity scrol for all movies -->
+        <!-- Add infinity scrol for all movies -->
 
-            <div class="movie-items row">
-                <div *ngFor="let item of selectedTypeMovies" class="col-sm-4">
-                    <div>
-                        <img [src]="item.img" alt="">
-                    </div>
-                    <span>{{item.name}}</span>
-                </div>
-            </div>
-
-        </div>
-
-
+        <router-outlet></router-outlet>
+        <!-- </div> -->
     </div>
-
 </div>

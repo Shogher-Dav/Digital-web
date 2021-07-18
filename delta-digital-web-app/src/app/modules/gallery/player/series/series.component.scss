@@ -1,0 +1,18 @@
+@import '../../../../../assets/styles/mixins.scss';
+@import '../../../../../assets/styles/variables.scss';
+.movie-items {
+    color: $light-red;
+    @include adaptiv-font(39, 15);
+
+    img {
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .time {
+      color: #C8C6C6;
+      @include adaptiv-font(24, 12);
+
+
+    }
+  }

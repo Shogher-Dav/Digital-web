@@ -48,3 +48,10 @@ html, body {
   }
 
 }
+
+
+
+//remove routerLink automatically added outline 
+*[ng-reflect-router-link]:focus {
+  outline: none;
+}

@@ -1,0 +1,16 @@
+<div>
+    <div class="d-flex align-items-center  gallery-margin">
+        <div class="card gallery-label">
+            <img [src]='selectedTypeImg' alt="">
+        </div>
+        <span class="label-text">{{selectedMovieTypeName}}</span>
+    </div>
+    <div class="movie-items  row ">
+        <div *ngFor="let item of selectedTypeMovies" class="col-sm-4">
+            <div>
+                <img  (click)="goToPlayer(item.name)" [src]="item.img" alt="">
+            </div>
+            <span>{{item.name}}</span>
+        </div>
+    </div>
+</div>
