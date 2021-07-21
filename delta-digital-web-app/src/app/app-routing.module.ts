@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'gallery',
     loadChildren: () => import('./modules/gallery/gallery.module').then(m => m.GalleryModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
 ];

@@ -1,0 +1,200 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/variables.scss';
+
+.profile {
+  &-container {
+    width: 90%;
+    margin: 5vw auto 29.271vw;
+
+    i {
+      cursor: pointer;
+    }
+
+    .user {
+      margin-bottom: 12.24vw;
+
+      @media screen and (max-width: 992px) {
+        justify-content: center;
+
+      }
+
+      &-img {
+        margin-right: 3.1%;
+
+        img {
+          width: 10.5em;
+          height: 10.5em;
+
+
+          @media screen and (max-width: 1200px) {
+            width: 100%;
+            height: unset;
+
+          }
+        }
+
+      }
+
+      &-name {
+        letter-spacing: 2.8px;
+        color: $dark-red;
+        @include adaptiv-font(70, 24)
+      }
+
+      &-email {
+        letter-spacing: 1.44px;
+        color: #B1A6A6;
+        @include adaptiv-font(36, 16)
+      }
+    }
+
+    .operations {
+      color: $dark-red;
+
+      .phone-icon {
+        @include adaptiv-font (82, 50);
+      }
+
+      .card {
+        padding: 2.7em 2.7em;
+        width: 48.26vw;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 70px;
+
+        @media screen and (max-width: 992px) {
+          padding: 1em;
+          width: 86.26vw;
+
+        }
+      }
+
+      .text {
+        &-device {
+          letter-spacing: 1.72px;
+          @include adaptiv-font (43, 12);
+        }
+
+        &-config {
+          letter-spacing: 1.24px;
+          @include adaptiv-font (31, 12);
+
+        }
+
+        &-exit {
+          color: #141313;
+          letter-spacing: 1.24px;
+          @include adaptiv-font (31, 12);
+        }
+
+        &-delete {
+          letter-spacing: 1.72px;
+          color: #FCF9F9;
+          @include adaptiv-font (43, 16);
+          margin-left: 25%;
+
+        }
+
+        &-arrow {
+          @include adaptiv-font (36, 26);
+          color: #A79C9C;
+        }
+
+      }
+
+    }
+
+    .red-card {
+      background-color: #EB0F0F;
+    }
+
+    .white-arrow {
+      @include adaptiv-font (36, 26);
+      color: #FFF9F9;
+      ;
+    }
+
+    .right-part {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .header .bg-dark {
+  background-color: transparent !important;
+
+}
+
+:host ::ng-deep .header .nav-link {
+  color: $black;
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
+
+:host ::ng-deep .header .nav-item {
+
+  &:hover,
+  &:active {
+    border-bottom: 3px solid $light-red !important;
+  }
+
+}
+
+
+
+:host ::ng-deep .header .nav-span {
+  @media screen and (max-width: 1200px) {
+    color:$light-red !important;
+  }
+}
+
+:host ::ng-deep .header .header-profile-btn {
+  background-color: #E1E1E1 !important;
+}
+
+:host ::ng-deep .header-search-btn {
+  color: $black !important;
+}
+
+
+:host ::ng-deep .triangle-container {
+  background-image: url("../../../assets/images/Контур\ 35561.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 153px;
+  width: 127px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-top: -22px;
+
+  @media screen and (max-width: 1200px) {
+
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    margin-left: 45px;
+    margin-top: 0;
+  }
+
+  img {
+    position: absolute;
+    top: 16%;
+    left: 12%;
+  }
+}
+
+
+:host ::ng-deep .collapse {
+  align-items: flex-start;
+}
+
+:host ::ng-deep .header-profile-img {
+  background-image: unset !important;
+}
