@@ -1,0 +1,81 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/variables.scss';
+
+.operations {
+  color: $dark-red;
+  margin: 0 auto;
+
+  .phone-icon {
+    @include adaptiv-font (82, 50);
+    margin-right: 0.74em;
+  }
+
+  .card {
+    padding: 2em 2.7em 2em 4em;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    box-shadow: 0px 3px 6px #00000029;
+
+
+    @media screen and (max-width: 992px) {
+      padding: 1em;
+      margin-bottom: 30px;
+    }
+  }
+
+  .text {
+
+    &-device {
+      letter-spacing: 1.72px;
+      @include adaptiv-font (43, 12);
+      border-bottom: 3px solid transparent;
+    }
+
+    &-config {
+      letter-spacing: 1.24px;
+      @include adaptiv-font (31, 12);
+    }
+
+    &-exit {
+      color: #141313;
+      letter-spacing: 1.24px;
+      @include adaptiv-font (31, 12);
+    }
+
+    &-delete {
+      letter-spacing: 1.72px;
+      color: #FCF9F9;
+      @include adaptiv-font (43, 16);
+      margin-left: 25%;
+    }
+    &-arrow {
+      @include adaptiv-font (36, 26);
+      color: #A79C9C;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .user-active {
+    border-bottom: 3px solid $dark-red !important;
+  }
+  
+  .red-card {
+    background-color: #EB0F0F;
+  }
+  
+  .white-arrow {
+    @include adaptiv-font (36, 26);
+    color: #FFF9F9;
+  }
+  
+  
+  .up {
+    width: 100%;
+  }
+}
+
+

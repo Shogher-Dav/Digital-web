@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  isInDevice = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  openDevice(event: any) {
+    this.isInDevice = event === 'true' ? true : false 
+  }
+
+ 
 
 }

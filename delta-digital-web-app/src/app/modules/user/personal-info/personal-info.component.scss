@@ -1,0 +1,82 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/variables.scss';
+
+.personal {
+
+  .card {
+    box-shadow: 0px 3px 6px #00000063;
+    border-radius: 60px;
+    padding: 1.282em 1.595em;
+  }
+
+  .main-content {
+    padding: 0 1.065em 4.532em;
+  }
+
+
+  i {
+    @include adaptiv-font(63, 16);
+  }
+
+  input {
+    box-shadow: 0px 3px 6px #00000040;
+    height: 5em;
+
+    @media screen and (max-width: 1200px) {
+      height: 50px;
+
+    }
+  }
+
+  .title {
+    text-align: center;
+    @include adaptiv-font(54, 16);
+    margin: 3.2vw 0 5.5vw;
+  }
+
+  .msg {
+    letter-spacing: 0.88px;
+    color: #ABABAB;
+    opacity: 1;
+    @include adaptiv-font(22, 10);
+    font-family: ArTarumianMHarvats;
+    margin-bottom: 4.6vw;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  .form-group {
+    margin-top: 2vw;
+  }
+
+  .submit-btn {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000040;
+    border-radius: 7px;
+    opacity: 0.7;
+    color: $dark-red;
+    letter-spacing: 2.04px;
+    @include adaptiv-font(51, 16);
+    padding: 0.432em 3.255em;
+    margin-top: 4.22vw;
+
+    @media screen and (max-width: 576px) {
+      padding: 0.432em 1.255em;
+    }
+  }
+
+  .input-group {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    i {
+      position: absolute;
+      top: 28%;
+      @include adaptiv-font(29, 16);
+      right: 3%;
+    }
+  }
+}

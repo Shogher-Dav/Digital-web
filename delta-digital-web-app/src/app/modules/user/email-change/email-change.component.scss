@@ -1,0 +1,84 @@
+@import '../../../../assets/styles/mixins.scss';
+@import '../../../../assets/styles/variables.scss';
+
+
+.email {
+
+  .card {
+    box-shadow: 0px 3px 6px #00000063;
+    padding: 1.282em 1.595em;
+
+  }
+
+  .main-content {
+    padding: 0 1.065em 4.532em;
+
+    @media screen and (max-width: 576px) {
+        padding: 0 0 2.532em;
+    }
+
+  }
+
+  .msg {
+    letter-spacing: 1.16px;
+    color: #ABABAB;
+    @include adaptiv-font(29, 10);
+    font-family: ArTarumianMHarvats;
+    margin-bottom: 4.6vw;
+  }
+
+  .title {
+    letter-spacing: 2.76px;
+    @include adaptiv-font(69, 16);
+    margin: 0.8em 0 1em;
+    text-align: center;
+
+  }
+
+  .title-2 {
+    letter-spacing: 2.2px;
+    @include adaptiv-font(55, 16);
+    margin-bottom: 0.9em;
+  }
+
+  .show-password {
+    display: none;
+  }
+
+  &-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 3px 6px #00000040;
+    border-radius: 7px;
+    height: 2.841em;
+    @include adaptiv-font(32, 16);
+
+  }
+
+  .submit-btn {
+    background: $white 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000040;
+    opacity: 0.7;
+    @include adaptiv-font(49, 12);
+    padding: 0.432em 1.64em;
+    margin-top: 5.22vw;
+    border-radius: 7px;
+    color: $dark-red;
+
+    @media screen and (max-width: 576px) {
+      padding: 0.432em 1.255em;
+    }
+  }
+
+  i {
+    cursor: pointer;
+  }
+
+  .close-btn {
+    @include adaptiv-font(55, 16);
+
+  }
+
+
+}

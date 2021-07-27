@@ -1,0 +1,33 @@
+<div class="operations">
+    <div class="operations-container text row justify-content-center">
+        <div class="col-lg-6">
+
+            <div class="card flex-row" routerLink="device" (click)="openDevice('true')">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-mobile-alt phone-icon"></i>
+                    <span class="text-device" routerLinkActive="user-active">Սարքավորումներ</span>
+                </div>
+               
+
+                <i class="fas fa-chevron-right text-arrow"></i>
+            </div>
+            <div class="card flex-row" (click)="openConfig()">
+                <span class="text-config">Կարգավորումներ</span>
+                <i class="fas fa-chevron-right text-arrow"></i>
+            </div>
+            <div class="card flex-row">
+                <span class="text-exit">Ելք համակարգից</span>
+                <i class="fas fa-sign-out-alt text-arrow"></i>
+            </div>
+            <div class="card flex-row red-card">
+                <span class="text-delete">Ջնջել Հաշիվը</span>
+                <i class="fas fa-sign-out-alt white-arrow"></i>
+            </div>
+        </div>
+        <div class="right-part col-lg-5">
+            <div class="up">
+                <router-outlet></router-outlet>
+            </div>
+            <img src="../../../../assets/images/Сгруппировать 6339.png" alt="">
+        </div>
+    </div>

@@ -1,0 +1,32 @@
+<div class="config">
+    <div class="config-container row justify-content-center">
+        <div class="col-lg-5">
+            <div class="config-header d-flex align-items-center">
+                <div class="config-back-icon">
+                    <i class="fas fa-arrow-left" (click)="closeDevice()"></i>
+                </div>
+                <span class="config-title">Կարգավորումներ</span>
+            </div>
+            <div class="card flex-row" routerLink="info">
+                <span>Անձնական տվյալներ</span>
+                <i class="fas fa-chevron-right text-arrow"></i>
+            </div>
+            <div class="card flex-row" routerLink="password">
+                <span>Փոխել գաղտնաբառը</span>
+                <i class="fas fa-chevron-right text-arrow"></i>
+            </div>
+            <div class="card flex-row" routerLink="email">
+                <span>Փոխել էլ․ Հասցեն</span>
+                <i class="fas fa-chevron-right text-arrow"></i>
+            </div>
+        </div>
+
+        <div class="right-part col-lg-6">
+            <div class="up">
+                <router-outlet></router-outlet>
+            </div>
+            <img src="../../../../assets/images/Сгруппировать 6339.png" alt="">
+        </div>
+    </div>
+
+</div>

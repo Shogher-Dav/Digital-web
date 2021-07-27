@@ -3,15 +3,20 @@
 
 .profile {
   &-container {
-    width: 90%;
+    width: 95%;
     margin: 5vw auto 29.271vw;
+
+    @media screen and (max-width: 992px) {
+      width: 80%;
+
+    }
 
     i {
       cursor: pointer;
     }
 
     .user {
-      margin-bottom: 12.24vw;
+      margin-bottom: 5.24vw;
 
       @media screen and (max-width: 992px) {
         justify-content: center;
@@ -50,14 +55,15 @@
 
     .operations {
       color: $dark-red;
+      margin: 0 auto;
 
       .phone-icon {
         @include adaptiv-font (82, 50);
+        margin-right: 60px;
       }
 
       .card {
         padding: 2.7em 2.7em;
-        width: 48.26vw;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 70px;
@@ -65,7 +71,7 @@
         @media screen and (max-width: 992px) {
           padding: 1em;
           width: 86.26vw;
-
+          margin-bottom: 30px;
         }
       }
 
@@ -73,6 +79,7 @@
         &-device {
           letter-spacing: 1.72px;
           @include adaptiv-font (43, 12);
+          margin-left: -10.3%;
         }
 
         &-config {
@@ -104,15 +111,20 @@
 
     }
 
-    .red-card {
-      background-color: #EB0F0F;
-    }
+    // .user-active {
+    //   padding-bottom: 4%;
+    //   border-bottom: 3px solid red;
+    // }
 
-    .white-arrow {
-      @include adaptiv-font (36, 26);
-      color: #FFF9F9;
-      ;
-    }
+    // .red-card {
+    //   background-color: #EB0F0F;
+    // }
+
+    // .white-arrow {
+    //   @include adaptiv-font (36, 26);
+    //   color: #FFF9F9;
+      
+    // }
 
     .right-part {
       img {
@@ -149,7 +161,7 @@
 
 :host ::ng-deep .header .nav-span {
   @media screen and (max-width: 1200px) {
-    color:$light-red !important;
+    color: $light-red !important;
   }
 }
 

@@ -1,0 +1,36 @@
+<div class="personal">
+    <div class="card">
+        <i class="fas fa-times-circle" (click)="close()"></i>
+        <div class="main-content">
+            <div class="title">
+                <span>Անձնական տվյալներ</span>
+            </div>
+            <div class="msg">
+                Համակարգում գրանցվելու համար մուտքագրեք Ձեր տվյալները
+            </div>
+            <div class="personal-form">
+                <span class="personal-info">Անձնական տվյալներ</span>
+                <form formGroup="personalInfo">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Անուն" formControlName="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ազգանուն" formControlName="surname">
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
+                            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [bsConfig]="{ adaptivePosition: true }"
+                            [bsConfig]="{containerClass:'theme-red'}" formControlName="birthDate"
+                            placeholder="Ծննդյան ամսաթիվ"
+                            formControlName="date">
+                        <i class="fa fa-calendar-alt input-logo" aria-hidden="true" (click)="datepickerYMD.toggle()"
+                            [attr.aria-expanded]="datepickerYMD.isOpen">
+                        </i>
+                    </div>
+                    <button class="btn submit-btn btn-click-style">Հաստատել</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
