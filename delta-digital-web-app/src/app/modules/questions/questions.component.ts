@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainService } from 'src/app/core/services/main.service';
 
 @Component({
   selector: 'app-questions',
@@ -10,9 +11,11 @@ export class QuestionsComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private mainService: MainService) { }
 
   ngOnInit(): void {
+    this.mainService.showLogin$.next(true);
+
   }
 
 }

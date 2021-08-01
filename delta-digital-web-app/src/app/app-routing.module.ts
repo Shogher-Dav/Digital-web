@@ -3,16 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { PackageComponent } from './components/package/package.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { TermsComponent } from './components/terms/terms.component';
 import { GalleryComponent } from './modules/gallery/gallery.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'package', component: PackageComponent },
+  { path: 'terms', component: TermsComponent },
   {
     path: 'channels',
     loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule),
-    
+
   },
   {
     path: 'about',

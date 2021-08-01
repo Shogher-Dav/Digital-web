@@ -1,0 +1,119 @@
+@import '../../../assets/styles/mixins.scss';
+@import '../../../assets/styles/variables.scss';
+
+.terms {
+
+    &-container {
+        width: 61%;
+        margin: 10vw  auto;
+        @include adaptiv-font(30, 14);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #707070;
+        text-align: left;
+        
+    }
+
+
+}
+
+:host ::ng-deep .header {
+
+    .bg-dark {
+      background-color: transparent !important;
+  
+      @media screen and (max-width: 1200px) {
+        color: transparent !important;
+      }
+    }
+  
+    .nav-link {
+      color: $light-red;
+  
+      &:hover,
+      &:focus {
+        color: $light-red;
+      }
+  
+      &-active {
+        border-bottom: 3px solid #E22727 !important;
+      }
+    }
+  
+    .nav-span {
+      @media screen and (max-width: 1200px) {
+        color: $light-red !important;
+      }
+    }
+  
+    .profile-btn {
+      background-color: #E2E2E2 !important;
+    }
+    
+    &-profile-img {
+      background-image: url('../../../assets/images/4486.png') !important;
+    }
+  
+    .triangle-container {
+      position: relative;
+      width: 6.35em;
+      height: 5.35em;
+      background: #9D9D9D;
+      box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
+      border-bottom-left-radius: 13px;
+      border-bottom-right-radius: 13px;
+      margin-top: -18px;
+  
+      @media screen and (max-width: 1200px) {
+        width: 4em;
+        height: 4em;
+      }
+  
+    }
+  
+    .logo-traingle {
+      position: absolute;
+      top: 40%;
+      left: 16%;
+      width: 2em;
+      height: 2em;
+      clip: rect(2.6em, 6em, 7em, -3em);
+  
+      @media screen and (max-width: 1200px) {
+        top: 24%;
+        left: 27%;
+      }
+  
+      &:before {
+        content: "";
+        display: block;
+        margin: -1em;
+        height: 6.35em;
+        width: 6.35em;
+        background: #9D9D9D;
+        box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
+        transform: scale(0.8, 1) rotate(45deg);
+  
+        @media screen and (max-width: 1200px) {
+          width: 4.35em;
+          height: 5.35em;
+        }
+      }
+    }
+  
+    .logo {
+      z-index: 100;
+      padding: 30px 17px;
+    }
+  
+    .header-logo {
+      @media screen and (max-width: 1200px) {
+        img {
+          width: 100% !important;
+        }
+      }
+    }
+    &-search-btn {
+      color: $black !important;
+  
+    }
+  }

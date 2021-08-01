@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { MainService } from 'src/app/core/services/main.service';
 import { UserService } from 'src/app/core/services/user.service';
 
 class CustomValidators {
@@ -27,11 +28,12 @@ export class RegistrationComponent implements OnInit {
 
   userFormGroup: FormGroup;
   passwordValidationPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/])[A-Za-z-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/]{8,}/;
-
+  showLogin$ = this.mainService.showLogin$;
 
   constructor(
     private fb: FormBuilder,
-    private userService: UserService) {
+    private userService: UserService,
+    private mainService: MainService) {
 
 
     this.userFormGroup = this.fb.group({
@@ -49,7 +51,10 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.mainService.showLogin$.next(true);
+
+   }
 
   register() {
     if (this.userFormGroup.valid) {

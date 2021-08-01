@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { MainService } from 'src/app/core/services/main.service';
 
 @Component({
   selector: 'app-main',
@@ -21,7 +22,8 @@ export class MainComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private mainService: MainService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern(this.passwordValidationPattern)]]
@@ -31,7 +33,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.setIsAuthenticated();
-
+    this.mainService.showLogin$.next(false);
   }
 
   login() {

@@ -91,102 +91,118 @@
   }
 }
 
-:host ::ng-deep .header .bg-dark {
-  // background-color: transparent !important;
-  background-image: none;
-  background-color: transparent !important;
-  border-radius: 0px;
-  border: 0;
-  box-shadow: none;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
+:host ::ng-deep .header {
 
-}
+  .bg-dark {
+    // background-color: transparent !important;
+    background-image: none;
+    background-color: transparent !important;
+    border-radius: 0px;
+    border: 0;
+    box-shadow: none;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 
-:host ::ng-deep .header .nav-link {
-  color: $white;
+  }
 
-  &:hover,
-  &:focus {
+  .nav-link {
     color: $white;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+
+    &-active {
+      border-bottom: 3px solid $dark-red !important;
+    }
+
   }
-}
 
-:host ::ng-deep .header .nav-item {
+  &-profile-btn {
+    background-color: $white !important;
+  }
 
-  &:hover,
-  &:active {
+  &-search-btn {
+    color: $white !important;
+  }
+
+  .triangle-container {
+    background-image: url("../../../assets/images/Контур\ 35561.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 153px;
+    width: 127px;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: -32px;
+
+    @media screen and (max-width: 1200px) {
+      height: 75px;
+      width: 75px;
+      position: absolute;
+      margin-left: 45px;
+      margin-top: -10px;
+    }
+
+    img {
+      position: absolute;
+      top: 16%;
+      left: 12%;
+    }
+  }
+
+  .nav-span {
+    color: $white !important;
+  }
+
+
+
+  .collapse {
+    align-items: flex-start;
+  }
+
+  .nav-second-part {
+    // @media screen and (max-width: 1200px) {
+    //   top: 100% !important;
+
+    // }
+
+    @media screen and (min-width: 1200px) {
+      top: 25% !important;
+    }
+  }
+
+  .bg-gray {
+    top: -10px !important;
+    left: -11px !important;
+
+  }
+
+  .nav-link-active {
     border-bottom: 3px solid $dark-red !important;
+
   }
 
 }
 
+// :host ::ng-deep .header .nav-item {
 
-:host ::ng-deep .header .header-profile-btn {
-  background-color: $white !important;
-}
+//   &:hover,
+//   &:active {
+//     border-bottom: 3px solid $dark-red !important;
+//   }
 
-:host ::ng-deep .header-search-btn {
-  color: $white !important;
-}
-
-
-:host ::ng-deep .triangle-container {
-  background-image: url("../../../assets/images/Контур\ 35561.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 153px;
-  width: 127px;
-  position: relative;
-  top: 0;
-  left: 0;
-  margin-top: -32px;
-
-  @media screen and (max-width: 1200px) {
-    height: 75px;
-    width: 75px;
-    position: absolute;
-    margin-left: 45px;
-    margin-top: -10px;
-  }
-
-  img {
-    position: absolute;
-    top: 16%;
-    left: 12%;
-  }
-}
-
-
-:host ::ng-deep .navbar-collapse {
-  align-items: flex-start;
-  // margin-top: -72px !important;
-}
-
-:host ::ng-deep .nav-span {
-  color: $white !important;
-}
-
-:host ::ng-deep .bg-gray {
-  top: -10px !important;
-  left: -11px !important;
-
-}
-
-:host ::ng-deep .header .nav-link-active{
-  border-bottom: 3px solid $dark-red !important;
-
-}
+// }
 
 
 //remove routerLink automatically added outline 
 *[ng-reflect-router-link]:focus {
   outline: none;
 }
-
-

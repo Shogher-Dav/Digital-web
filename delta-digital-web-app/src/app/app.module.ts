@@ -32,6 +32,7 @@ import { PackageComponent } from './components/package/package.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 import { GalleryModule } from './modules/gallery/gallery.module';
+import { TermsComponent } from './components/terms/terms.component';
 
 
 
@@ -43,6 +44,7 @@ import { GalleryModule } from './modules/gallery/gallery.module';
     MainComponent,
     RegistrationComponent,
     PackageComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,

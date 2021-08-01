@@ -131,9 +131,7 @@ export class ChannelsListComponent implements OnInit {
   }
 
   changeFavourite(channel: any) {
-
     channel.favourite = !channel.favourite;
-
   }
 
 }
