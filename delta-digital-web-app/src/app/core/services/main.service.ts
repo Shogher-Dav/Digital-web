@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
+import { IAbout } from '../interfaces/IAbout';
 import { IRules } from '../interfaces/IRules';
 
 @Injectable({
@@ -26,6 +27,11 @@ export class MainService {
                     this.termsAndPolicyText$.next(res.description)
                 })
             );
+
+    }
+
+    getAboutInfo(): Observable<IAbout>{
+        return this.httpClient.get<IAbout>(`${this.baseUrl}/api/delta-digital-media-microservice/about`);
 
     }
 }

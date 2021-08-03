@@ -86,7 +86,7 @@ export class AuthService {
   }
 
   removeIsAuthenticatedLocalStr(): void {
-    sessionStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('isAuthenticated');
   }
 
 

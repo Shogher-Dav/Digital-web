@@ -4,6 +4,7 @@ import { MainComponent } from './components/main/main.component';
 import { PackageComponent } from './components/package/package.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { AuthGuard } from './core/services/auth.guard';
 import { GalleryComponent } from './modules/gallery/gallery.component';
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   {
     path: 'channels',
     loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule),
-
+    canActivate:[AuthGuard]
   },
   {
     path: 'about',
@@ -30,11 +31,15 @@ const routes: Routes = [
   },
   {
     path: 'gallery',
-    loadChildren: () => import('./modules/gallery/gallery.module').then(m => m.GalleryModule)
+    loadChildren: () => import('./modules/gallery/gallery.module').then(m => m.GalleryModule),
+    canActivate:[AuthGuard]
+
   },
   {
     path: 'profile',
-    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
+    loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule),
+    canActivate:[AuthGuard]
+
   },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 

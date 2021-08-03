@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { IAbout } from 'src/app/core/interfaces/IAbout';
 import { MainService } from 'src/app/core/services/main.service';
 
 @Component({
@@ -6,13 +8,24 @@ import { MainService } from 'src/app/core/services/main.service';
   templateUrl: './about-us.component.html',
   styleUrls: ['./about-us.component.scss']
 })
-export class AboutUsComponent implements OnInit {
+export class AboutUsComponent implements OnInit, OnDestroy {
+
+  about = new IAbout();
+  subS: Subscription;
 
   constructor(private mainService: MainService) { }
 
   ngOnInit(): void {
     this.mainService.showLogin$.next(true);
+    this.subS = this.mainService.getAboutInfo().subscribe(res => {
+      this.about = res;
+    })
 
   }
+
+  ngOnDestroy(): void {
+    this.subS.unsubscribe();
+  }
+
 
 }
