@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderModule } from '../../shell/header/header.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+
 
 import { ChannelsListComponent } from './channels-list/channels-list.component';
 import { ChannelsComponent } from './channels.component'
@@ -32,7 +35,8 @@ import { ChannelComponent } from './channel/channel.component';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    ChannelsRoutingModule
+    ChannelsRoutingModule,
+    InfiniteScrollModule,
   ],
   exports: [ChannelsListComponent]
 

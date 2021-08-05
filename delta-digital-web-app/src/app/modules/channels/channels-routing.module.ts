@@ -6,9 +6,9 @@ import { MyListComponent } from './my-list/my-list.component';
 
 const routes: Routes = [
   { path: '', component: ChannelsComponent },
-  { path: 'favourite', component: MyListComponent },
-  { path: 'channel', component: ChannelComponent },
-  { path: 'favourite/channel', redirectTo: 'channel' }
+  { path: 'favorite', component: MyListComponent },
+  { path: 'channel/:id', component: ChannelComponent },
+  { path: 'favorite/channel', redirectTo: 'channel' }
 
 ];
 

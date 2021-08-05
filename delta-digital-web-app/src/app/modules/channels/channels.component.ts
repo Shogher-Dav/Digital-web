@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { ChannelsService } from 'src/app/core/services/channels.service';
 
 @Component({
   selector: 'app-channels',
@@ -7,123 +9,124 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChannelsComponent implements OnInit {
 
-  channels = [
-    {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
+  channels: any;
+  // channels = [
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
 
-     {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
-    {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
 
-     {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
-    {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
 
-     {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
-    {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
 
-     {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
-    {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   },
 
-     {
-      favorite: true,
-      id: 1,
-      liveProgram: 'Հաղորդման անվանում',
-      liveProgramTime: '10:15',
-      logoId: 1,
-      name: 'Հեռուստաալիքի անվանում',
-      nextProgram: 'Հաղորդման անվանում',
-      nextProgramTime: '11:15',
-      url: "../../../assets/images/logo-channel.png"
-    }
-  ];
+  //   {
+  //     favorite: true,
+  //     id: 1,
+  //     liveProgram: 'Հաղորդման անվանում',
+  //     liveProgramTime: '10:15',
+  //     logoId: 1,
+  //     name: 'Հեռուստաալիքի անվանում',
+  //     nextProgram: 'Հաղորդման անվանում',
+  //     nextProgramTime: '11:15',
+  //     url: "../../../assets/images/logo-channel.png"
+  //   }
+  // ];
 
   // videoItems = [
   //   {
@@ -147,9 +150,11 @@ export class ChannelsComponent implements OnInit {
   // currentVideo = this.videoItems[this.activeIndex];
   // data:any;
 
-  constructor() { }
+  constructor(private channelsService: ChannelsService) { }
 
   ngOnInit(): void {
+
+  
   }
 
 

@@ -4,6 +4,22 @@
 .channels-list {
   margin: 0 auto;
   width: 90%;
+  // height: 50vw;
+  // position: relative;
+  overflow: hidden;
+  // top: 0;
+  // left: 0;
+  // height: 100%;
+  // width: 100%;
+
+  &-container {
+
+    height: 100%;
+
+
+
+  }
+
 
   .channel-logo {
     width: 100%;
@@ -58,3 +74,27 @@
   }
 }
 
+
+
+p {
+  font-family: Lato;
+}
+
+.search-results {
+  height: 20vw;
+  overflow: scroll;
+}
+
+.title {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-70%);
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  width: 100%;
+}
+
+.title small {
+  color: #eaeaea;
+}

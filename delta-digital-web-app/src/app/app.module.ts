@@ -18,6 +18,8 @@ import { HeaderModule } from './shell/header/header.module';
 import { AboutUsModule } from './modules/about-us/about-us.module';
 import { ContactModule } from './modules/contact/contact.module';
 
+
+
 // ngx bootstrap
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -62,7 +64,8 @@ import { TermsComponent } from './components/terms/terms.component';
     PopoverModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TooltipModule.forRoot(),
-    GalleryModule
+    GalleryModule,
+    
 
   ],
   providers: [
