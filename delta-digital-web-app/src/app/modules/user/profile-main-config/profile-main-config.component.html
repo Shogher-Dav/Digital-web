@@ -15,11 +15,11 @@
                 <span class="text-config">Կարգավորումներ</span>
                 <i class="fas fa-chevron-right text-arrow"></i>
             </div>
-            <div class="card flex-row">
+            <div class="card flex-row" (click)="exit()">
                 <span class="text-exit">Ելք համակարգից</span>
                 <i class="fas fa-sign-out-alt text-arrow"></i>
             </div>
-            <div class="card flex-row red-card">
+            <div class="card flex-row red-card" (click)="deleteCurrentUser()">
                 <span class="text-delete">Ջնջել Հաշիվը</span>
                 <i class="fas fa-sign-out-alt white-arrow"></i>
             </div>

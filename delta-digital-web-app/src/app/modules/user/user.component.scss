@@ -8,9 +8,11 @@
 
     @media screen and (max-width: 992px) {
       width: 80%;
-
     }
 
+    @media screen and (max-width: 580px) {
+      margin-top: 17vw;
+    }
     i {
       cursor: pointer;
     }
@@ -123,7 +125,7 @@
     // .white-arrow {
     //   @include adaptiv-font (36, 26);
     //   color: #FFF9F9;
-      
+
     // }
 
     .right-part {
@@ -209,4 +211,14 @@
 
 :host ::ng-deep .header-profile-img {
   background-image: unset !important;
+}
+
+
+:host ::ng-deep .nav-second-part {
+  top: 26% !important;
+
+  @media screen and (max-width: 1200px) {
+    top: 80% !important;
+
+  }
 }

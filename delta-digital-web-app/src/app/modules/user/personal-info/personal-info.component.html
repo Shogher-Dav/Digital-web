@@ -10,9 +10,9 @@
             </div>
             <div class="personal-form">
                 <span class="personal-info">Անձնական տվյալներ</span>
-                <form formGroup="personalInfo">
+                <form [formGroup]="personalInfo">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Անուն" formControlName="name">
+                        <input type="text" class="form-control" placeholder="Անուն" formControlName="userName">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Ազգանուն" formControlName="surname">
@@ -20,17 +20,18 @@
                     <div class="input-group">
                         <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
                             [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [bsConfig]="{ adaptivePosition: true }"
-                            [bsConfig]="{containerClass:'theme-red'}" formControlName="birthDate"
+                            [bsConfig]="{containerClass:'theme-red'}" 
                             placeholder="Ծննդյան ամսաթիվ"
-                            formControlName="date">
+                            formControlName="birthDate">
                         <i class="fa fa-calendar-alt input-logo" aria-hidden="true" (click)="datepickerYMD.toggle()"
                             [attr.aria-expanded]="datepickerYMD.isOpen">
                         </i>
                     </div>
-                    <button class="btn submit-btn btn-click-style">Հաստատել</button>
+                    <button class="btn submit-btn btn-click-style" (click)="updateCurrentUser()">Հաստատել</button>
                 </form>
             </div>
         </div>
-
     </div>
 </div>
+
+

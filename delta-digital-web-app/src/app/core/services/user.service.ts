@@ -14,11 +14,31 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
   registerUser(user: IUser): Observable<any> {
-  return this.httpClient.post(`${this.baseUrl}/user/register`, user)
-  .pipe(
-    // catchError(this.handleError)
-  )
-    
+    return this.httpClient.post(`${this.baseUrl}/user/register`, user);
   }
+
+  getCurrentUser(): Observable<IUser> {
+    return this.httpClient.get<IUser>(`${this.baseUrl}/user/current`);
+  }
+
+  updateCurrentUserInfo(user: IUser): Observable<IUser> {
+    return this.httpClient.put<IUser>(`${this.baseUrl}/user/edit`, user);
+  }
+
+
+  deletecurrentUser(id: string): Observable<any> {
+    return this.httpClient.delete(`${this.baseUrl}/user/delete/${id}`);
+  }
+
+  changePassword(password: any) {
+    return this.httpClient.put(`${this.baseUrl}/user/updatePassword`, password);
+
+  }
+
+  changeEmail(newEmail: string) {
+    return this.httpClient.put(`${this.baseUrl}/user/complete-email`, newEmail);
+
+  }
+
 
 }

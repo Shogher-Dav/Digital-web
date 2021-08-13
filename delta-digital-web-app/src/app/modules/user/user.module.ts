@@ -11,6 +11,7 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { PasswordChangeComponent } from './password-change/password-change.component';
 import { EmailChangeComponent } from './email-change/email-change.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     UserRoutingModule,
     HeaderModule,
     BsDatepickerModule.forRoot(),
+    ReactiveFormsModule
 
   ]
 })
