@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.mainService.showLogin$.next(true);
 
-   }
+  }
 
   register() {
     if (this.userFormGroup.valid) {

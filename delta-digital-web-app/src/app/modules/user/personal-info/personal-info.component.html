@@ -20,18 +20,17 @@
                     <div class="input-group">
                         <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
                             [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" [bsConfig]="{ adaptivePosition: true }"
-                            [bsConfig]="{containerClass:'theme-red'}" 
-                            placeholder="Ծննդյան ամսաթիվ"
+                            [bsConfig]="{containerClass:'theme-red'}" placeholder="Ծննդյան ամսաթիվ"
                             formControlName="birthDate">
                         <i class="fa fa-calendar-alt input-logo" aria-hidden="true" (click)="datepickerYMD.toggle()"
                             [attr.aria-expanded]="datepickerYMD.isOpen">
                         </i>
                     </div>
-                    <button class="btn submit-btn btn-click-style" (click)="updateCurrentUser()">Հաստատել</button>
+                    <button [ngClass]="!personalInfo.valid ? 'disabled-btn' : 'btn-click-style'"
+                        [disabled]="!personalInfo.valid" class="btn submit-btn"
+                        (click)="updateCurrentUser()">Հաստատել</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-

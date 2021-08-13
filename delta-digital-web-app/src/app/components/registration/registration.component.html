@@ -83,13 +83,14 @@
                                         <span class="logo-bg">
                                             <i class="fas fa-lock input-logo"></i>
                                         </span>
-                                        <input type="password"  class="form-control password" name="password"
+                                        <input type="password" class="form-control password" name="password"
                                             formControlName="confirmPassword">
                                     </div>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn registration-btn btn-light"
                                         [ngClass]="userFormGroup.valid ? '' : 'disabled'"
+                                        [disabled]="!userFormGroup.valid"
                                         (click)="register()">ԳՐԱՆՑՎԵԼ</button>
                                 </div>
                             </form>

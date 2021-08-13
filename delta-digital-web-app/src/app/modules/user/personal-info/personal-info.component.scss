@@ -79,4 +79,9 @@
       right: 3%;
     }
   }
+
+  .disabled-btn {
+    opacity: .45;
+    cursor: not-allowed;
+  }
 }

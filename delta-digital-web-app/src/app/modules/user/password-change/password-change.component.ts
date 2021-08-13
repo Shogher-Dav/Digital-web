@@ -53,7 +53,6 @@ export class PasswordChangeComponent implements OnInit, OnDestroy {
         console.log(res);
       });
     }
-
   }
 
   close() {
