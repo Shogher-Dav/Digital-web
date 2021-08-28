@@ -56,6 +56,16 @@ export class ChannelsService {
     }
 
 
+    searchChannelsName(name: string): Observable<IChannelData>{
+        return this.httpClient.get<IChannelData>(`${this.baseUrl}/api/delta-digital-media-microservice/channel/search`,
+        {
+            params: {
+                'name': name
+            }
+        });
+    }
+
+
 
 
 }

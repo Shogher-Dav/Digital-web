@@ -4,6 +4,9 @@ import { HeaderComponent } from './header.component';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+
+
 
 
 
@@ -16,7 +19,9 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    TypeaheadModule.forRoot(),
+
   ],
   exports: [HeaderComponent]
 })

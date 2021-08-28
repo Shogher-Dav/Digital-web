@@ -23,6 +23,9 @@ import { ContactModule } from './modules/contact/contact.module';
 // ngx bootstrap
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+
 
 
 // import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -35,7 +38,6 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 import { GalleryModule } from './modules/gallery/gallery.module';
 import { TermsComponent } from './components/terms/terms.component';
-
 
 
 
@@ -64,6 +66,7 @@ import { TermsComponent } from './components/terms/terms.component';
     PopoverModule.forRoot(),
     BsDatepickerModule.forRoot(),
     TooltipModule.forRoot(),
+    ModalModule.forRoot(),
     GalleryModule,
     
 

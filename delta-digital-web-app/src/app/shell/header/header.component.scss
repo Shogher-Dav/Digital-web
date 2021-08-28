@@ -5,18 +5,12 @@
 
   &-container {
     position: relative;
-
   }
 
 
   &-logo {
     margin: 12px 36px 30px 46px;
     cursor: pointer;
-
-    img {
-      // width: 100%;
-
-    }
 
     @media screen and (max-width: 1200px) {
       margin: 0;
@@ -62,12 +56,8 @@
 
   .nav-item {
     cursor: pointer;
-    // border-bottom: 3px solid transparent;
     @include adaptiv-font(31, 20);
 
-    // &:hover {
-    //   border-bottom: 3px solid $white;
-    // }
 
     @media screen and (max-width: 1200px) {
       width: 100%;
@@ -79,14 +69,6 @@
   .nav-link-active {
     border-bottom: 3px solid $white;
 
-  }
-
-  .bg-dark {
-    // background-color: $dark-red !important;
-
-    // @media screen and (max-width: 1200px) {
-    //   background-color: $white !important;
-    // }
   }
 
   .bg-gray {
@@ -122,10 +104,6 @@
     &-item {
       @media screen and (max-width: 1200px) {
         background-color: $white;
-
-        &:hover {
-          border-bottom: 3px solid $black;
-        }
       }
     }
 
@@ -149,33 +127,36 @@
       width: 4em;
       height: 3em;
     }
+
     @media screen and (max-width: 576px) {
       width: 3em;
       height: 2em;
     }
   }
 
-  &-search-btn {
-    font-size: 31px;
-    cursor: pointer;
-    margin-right: 32.3px;
-    @include adaptiv-font(31, 16);
-    color: $white;
 
+
+  .searchbox__input {
+    @include adaptiv-font(20, 12);
+  }
+
+  .searchbox__icon {
+    margin: 5px;
+    @include adaptiv-font(35, 12);
+    color: $white;
+    cursor: pointer;
 
     @media screen and (max-width: 1200px) {
       color: $black;
-      margin-right: 5px;
+
     }
   }
 
-  &-search-input {}
+
+
 
   &-profile-btn {
-    // width: 203px;
-    // height: 73px;
     color: $dark-red;
-    // background-color: $white;
     border-radius: 29px;
     text-align: center;
     cursor: pointer;
@@ -183,25 +164,36 @@
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     padding: 0.38em 1.33em;
 
-
     @media screen and (max-width: 1200px) {
       padding: .375rem .75rem;
     }
   }
 
   .nav-second-part {
-    // vertically center
     margin: 0;
     position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
     right: 0;
+
+    @media screen and (max-width: 1200px) {
+      top: 10%;
+    }
   }
 
 }
 
-// remove borders from router-links 
-*[ng-reflect-router-link]:focus {
-  outline: none;
+
+.red-input {
+  background-color: transparent;
+  border-color: transparent;
+
+  &::placeholder {
+    color: transparent;
+
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+  }
+
 }

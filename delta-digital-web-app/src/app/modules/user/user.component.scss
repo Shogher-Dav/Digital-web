@@ -214,11 +214,11 @@
 }
 
 
-:host ::ng-deep .nav-second-part {
-  top: 26% !important;
 
-  @media screen and (max-width: 1200px) {
-    top: 80% !important;
+:host ::ng-deep  .nav-second-part {
+  top: 4%;
+}
 
-  }
+:host ::ng-deep .searchbox__icon {
+  color: $black !important;
 }

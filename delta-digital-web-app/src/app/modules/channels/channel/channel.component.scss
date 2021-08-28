@@ -145,24 +145,14 @@
     align-items: flex-start;
     margin-top: 20px;
   }
-
-
   .nav-second-part {
-    @media screen and (max-width: 1200px) {
-      top: 100% !important;
+    top: 4%;
+  }
 
-    }
-
-    @media screen and (min-width: 1200px) {
-      top: 25% !important;
-    }
+  .searchbox__icon {
+    color: $black !important;
   }
 }
 
 
 
-
-
-
-
-// http://185.177.104.253:9090/oauth/token?scope=read&grant_type=password&username=%7Byour email}&password={your password}

@@ -14,7 +14,8 @@ import { HeaderModule } from 'src/app/shell/header/header.module';
   imports: [
     CommonModule,
     ContactRoutingModule,
-    HeaderModule
+    HeaderModule,
+
   ]
 })
 export class ContactModule { }

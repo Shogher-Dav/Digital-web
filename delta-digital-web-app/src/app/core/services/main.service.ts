@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { IAbout } from '../interfaces/IAbout';
+import { IContact } from '../interfaces/IContact';
 import { IRules } from '../interfaces/IRules';
 
 @Injectable({
@@ -30,8 +31,15 @@ export class MainService {
 
     }
 
-    getAboutInfo(): Observable<IAbout>{
+    getAboutInfo(): Observable<IAbout> {
         return this.httpClient.get<IAbout>(`${this.baseUrl}/api/delta-digital-media-microservice/about`);
 
     }
+
+
+    contactUs(msg: IContact): Observable<any> {
+        return this.httpClient.post<IContact>(`${this.baseUrl}/api/delta-digital-media-microservice/contact/add`, msg)
+    }
+
+   
 }

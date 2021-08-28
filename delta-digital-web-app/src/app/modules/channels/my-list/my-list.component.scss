@@ -76,15 +76,11 @@
   .collapse {
     align-items: flex-start;
   }
-
   .nav-second-part {
-    @media screen and (max-width: 1200px) {
-      top: 100% !important;
+    top: 4%;
+  }
 
-    }
-
-    @media screen and (min-width: 1200px) {
-      top: 25% !important;
-    }
+  .searchbox__icon {
+    color: $black !important;
   }
 }

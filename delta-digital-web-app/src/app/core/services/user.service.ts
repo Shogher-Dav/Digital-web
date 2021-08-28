@@ -40,5 +40,9 @@ export class UserService {
 
   }
 
+  sendEmailForForgetPassword(email: string): Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/user/activate-code`, email);
+  }
+
 
 }

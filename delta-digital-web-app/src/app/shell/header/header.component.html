@@ -1,8 +1,7 @@
 <div class="header">
-    <div class=" header-container d-flex justify-content-between  bg-dark">
-
+    <div class="header-container  bg-dark ">
         <nav class="navbar navbar-expand-xl navbar-dark">
-            <div class="collapse-block" [ngClass]="{ 'bg-gray': navbarOpen }">
+            <div class="collapse-block " [ngClass]="{ 'bg-gray': navbarOpen }">
                 <button class="navbar-btn" (click)="toggleNavbar()" class="navbar-toggler" type="button"
                     data-toggle="collapse">
                     <i class="fas fa-bars nav-span"></i>
@@ -13,7 +12,6 @@
                         <div class="logo-traingle ">
                         </div>
                     </div>
-
                 </a>
                 <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -40,27 +38,25 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-        <div class="nav-second-part">
-            <form *ngIf="isLoggedIn" class=" d-flex align-items-center" >
-                <i *ngIf="!searchOpen" class="fas fa-search header-search-btn" (click)="toggleSearch()"></i>
-                <input *ngIf="searchOpen" class="form-control mr-sm-2 header-search-input" type="search"
-                    placeholder="Search" aria-label="Search" [formControl]="searchText">
+            <div  *ngIf="isLoggedIn" class="nav-second-part d-flex align-items-center">
+
+                <div [@showState]="stateName">
+                    <input class="searchbox__input form-control input-group-lg" [ngClass]="{ 'red-input': !searchOpen }"
+                        placeholder="Search..." [typeahead]="channelNames" [(ngModel)]="selected" [isAnimated]="true" />
+                </div>
+                <i class="fas fa-search searchbox__icon" (click)="toggleSearch($event)"></i>
                 <button routerLink="/profile/main" class="btn  my-2 my-sm-0 header-profile-btn" type="submit">Իմ
                     հաշիվը</button>
                 <div class="header-profile-img"></div>
-                <!-- <img class="header-profile-img" src="../../../assets/images/Сгруппировать 3394.png" alt=""> -->
-            </form>
-        </div>
-
+            </div>
+        </nav>
         <div class="register nav-second-part d-flex align-items-center" *ngIf="!isLoggedIn">
-                <div *ngIf = "showLogin$ | async" class="nav-item register-item">
-                    <a routerLink="" class="nav-link register-link">Մուտք</a>
-                </div>
-                <div class="nav-item register-item">
-                    <a routerLink="/register" class="nav-link register-link">Գրանցվել</a>
-                </div>
-
+            <div *ngIf="showLogin$ | async" class="nav-item register-item">
+                <a routerLink="" class="nav-link register-link">Մուտք</a>
+            </div>
+            <div class="nav-item register-item">
+                <a routerLink="/register" class="nav-link register-link">Գրանցվել</a>
+            </div>
         </div>
     </div>
 </div>

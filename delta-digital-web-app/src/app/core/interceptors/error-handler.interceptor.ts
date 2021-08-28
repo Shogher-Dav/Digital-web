@@ -46,6 +46,7 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
               //       location.reload();
               //     });
               // } else {
+                // console.log(error.error.error === 'invalid_token')
                 window.alert('Wrong email or password');
                 // this.router.navigate(['']).then(_ => console.log('redirect to login'));
                 return throwError(errorMessage);

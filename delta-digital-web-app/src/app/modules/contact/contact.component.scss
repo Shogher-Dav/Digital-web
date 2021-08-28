@@ -149,74 +149,39 @@
   .profile-btn {
     background-color: #E2E2E2 !important;
   }
-  
+
   &-profile-img {
     background-image: url('../../../assets/images/Сгруппировать\ 3394.png') !important;
   }
 
   .triangle-container {
+    background-image: url("../../../assets/images/red-triangle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 153px;
+    width: 127px;
     position: relative;
-    width: 6.35em;
-    height: 5.35em;
-    background: $light-red;
-    box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
-    margin-top: -18px;
+    top: 0;
+    left: 0;
+    margin-top: -26px;
 
     @media screen and (max-width: 1200px) {
-      width: 4em;
-      height: 4em;
+      height: 75px;
+      width: 75px;
+      position: absolute;
+      margin-left: 45px;
+      margin-top: 0;
     }
 
-  }
-
-  .logo-traingle {
-    position: absolute;
-    top: 40%;
-    left: 16%;
-    width: 2em;
-    height: 2em;
-    clip: rect(2.6em, 6em, 7em, -3em);
-
-    @media screen and (max-width: 1200px) {
-      top: 24%;
-      left: 27%;
-    }
-
-    &:before {
-      content: "";
-      display: block;
-      margin: -1em;
-      height: 6.35em;
-      width: 6.35em;
-      background: $light-red;
-      box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
-      transform: scale(0.8, 1) rotate(45deg);
-
-      @media screen and (max-width: 1200px) {
-        width: 4.35em;
-        height: 5.35em;
-      }
+    img {
+      position: absolute;
+      top: 16%;
+      left: 12%;
     }
   }
 
-  .logo {
-    z-index: 100;
-    padding: 30px 17px;
-  }
 
-  .header-logo {
-    @media screen and (max-width: 1200px) {
-      img {
-        width: 100% !important;
-      }
-    }
-  }
-  &-search-btn {
-    color: $black !important;
-
-  }
 }
 
 
@@ -226,3 +191,71 @@
 //   }
 
 // }
+
+
+
+.map-frame {
+  height: 29.74vw;
+  padding: 0;
+
+}
+
+#map {
+  height: 29.74vw;
+
+  @media screen and (max-width: 768px) {
+    height: 60vw;
+
+
+
+  }
+}
+
+.phone-container {
+  background-color: #F4F4F4;
+  letter-spacing: 0.85px;
+  color: #030303;
+  @include adaptiv-font(25, 12);
+  min-height: 192px;
+  .center {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+  }
+
+  .first-phone {
+    margin-bottom: 45%;
+  }
+
+  i {
+    color: $dark-red;
+    @include adaptiv-font(50, 15);
+    margin-right: 10px;
+
+  }
+
+}
+
+
+
+
+::ng-deep .custom-div-icon {
+  i {
+
+    @include adaptiv-font(100, 40);
+    color: $dark-red;
+
+  }
+}
+
+:host ::ng-deep .collapse {
+  align-items: flex-start;
+}
+
+:host ::ng-deep  .nav-second-part {
+  top: 4%;
+}
+
+:host ::ng-deep .searchbox__icon {
+  color: $black !important;
+}

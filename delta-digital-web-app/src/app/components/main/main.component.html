@@ -13,8 +13,8 @@
                 </div>
                 <div class="form-group">
                     <label>Գաղտնաբառ </label>
-                    <input [type]="showPassword ? 'text' : 'password'" class="form-control login-form-input password-input"
-                        formControlName="password">
+                    <input [type]="showPassword ? 'text' : 'password'"
+                        class="form-control login-form-input password-input" formControlName="password">
                     <i (click)="showPasswordToogle()" class="far fa-eye password-input-eye"
                         [ngClass]="!showPassword ? 'show-password': '' "></i>
                     <i (click)="showPasswordToogle()" class="far fa-eye-slash password-input-eye"
@@ -26,12 +26,11 @@
                             class="form-check-input-sm">
                         <span class="form-check-label-sm">Հիշել</span>
                     </div>
-                    <span class="forgot-password">Մոռացե՞լ եք գաղտնաբառը</span>
+                    <span (click)="openModal(wrtiteEmail)" class="forgot-password">Մոռացե՞լ եք գաղտնաբառը</span>
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary login-form-btn btn-click-style" (click)="login()"
-                        [ngClass]="loginForm.valid ? '' : 'disabled'"
-                        [disabled]="!loginForm.valid">Մուտք
+                        [ngClass]="loginForm.valid ? '' : 'disabled'" [disabled]="!loginForm.valid">Մուտք
                     </button>
                 </div>
             </form>
@@ -86,7 +85,7 @@
             </div>
         </div>
     </section>
-    <section  *ngIf="isAuthenticated">
+    <section *ngIf="isAuthenticated">
         <div class="channels">
             <div class="d-flex justify-content-center align-items-center">
                 <img src="../../../assets/images/264.png" alt="">
@@ -136,7 +135,7 @@
             </div>
         </div>
     </section>
-    <section  *ngIf="isAuthenticated">
+    <section *ngIf="isAuthenticated">
         <div class="gallery">
             <span class="title">ՏԵՍԱ<span class="title-part2">ԴԱՐԱՆ</span></span>
             <div class="gallery-icons row justify-content-around col-xs">
@@ -189,4 +188,38 @@
         <app-questions-list></app-questions-list>
     </section>
 </div>
-<!-- <button (click)="getChannels()">GET CHANNELS</button> -->
+
+<div class="modal">
+    <ng-template #wrtiteEmail>
+        <div class="modal-header">
+            <i class="fas fa-times-circle close pull-right" aria-label="Close" (click)="modalRef.hide()"></i>
+        </div>
+        <div class="modal-body">
+            <div>
+                <span class="modal-email">Ողջույն, խնդրում ենք գրել այն էլ․ հասցեն, որով գրանցված եք։</span>
+
+            </div>
+            <div class="modal-label">
+                <label>Էլ․ հասցե</label>
+                <input [formControl]="email" type="email" class="form-control  input-group-lg"
+                    aria-describedby="emailHelp" [ngClass]="(email?.touched || email?.dirty) && ( email?.hasError('required') 
+                    || email?.hasError('email')) ? 'is-invalid' : '' ">
+            </div>
+            <div class="text-center modal-btn">
+                <button class="btn send-btn btn-click-style" (click)="sendEmail(successModal)"
+                    [disabled]="!email.valid">
+                    ՈՒղարկել
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</div>
+
+<ng-template #successModal>
+    <div class="modal-header">
+        <i class="fas fa-times-circle close pull-right" aria-label="Close" (click)="successModalRef.hide()"></i>
+    </div>
+    <div class="modal-body sucsses-body">
+        <span class="msg-span">Մենք ուղարկել ենք Ձեր նոր գաղտնաբառը նշված էլ․ հասցեին։ </span>
+    </div>
+</ng-template>

@@ -80,18 +80,14 @@
     color: $black !important;
   }
 
+
+
   .nav-second-part {
-
-    @media screen  and (max-width: 1200px){
-      top: 100% !important;
-    }
-    @media screen  and (min-width: 1200px){
-      top: 25% !important;
-    }
-
-    @media screen  and (max-width: 576px){
-      top: 75% !important;
-    }
+    top: 4%;
+  }
+  
+  .searchbox__icon {
+    color: $black !important;
   }
 
 }

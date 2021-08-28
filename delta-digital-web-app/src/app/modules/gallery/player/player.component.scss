@@ -148,3 +148,11 @@
   border-bottom: 3px solid $dark-red !important;
 
 }
+
+:host ::ng-deep .nav-second-part {
+  top: 4%;
+}
+
+:host ::ng-deep  .searchbox__icon {
+  color: $black !important;
+}
