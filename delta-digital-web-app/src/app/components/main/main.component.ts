@@ -19,6 +19,7 @@ export class MainComponent implements OnInit {
 
   isAuthenticated: any;
   loginForm: FormGroup;
+  // Will used or change in the future
   passwordValidationPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/])[A-Za-z-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/]{8,}/
   modalRef: any;
   successModalRef: any
@@ -35,7 +36,7 @@ export class MainComponent implements OnInit {
     private userService: UserService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern(this.passwordValidationPattern)]]
+      password: ['', [Validators.required, Validators.maxLength(6)]]
     });
 
   }

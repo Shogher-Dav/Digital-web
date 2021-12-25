@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MainService } from 'src/app/core/services/main.service';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -27,13 +28,15 @@ export class RegistrationComponent implements OnInit {
 
 
   userFormGroup: FormGroup;
+  // Maybe will used in future
   passwordValidationPattern = /(?=.*[a-z])(?=.*[A-Z])(?=.*[-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/])[A-Za-z-!$%^&*()_+|~=`{}\[\]:";'<>?,.@\/]{8,}/;
   showLogin$ = this.mainService.showLogin$;
 
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private mainService: MainService) {
+    private mainService: MainService,
+    private router: Router) {
 
 
     this.userFormGroup = this.fb.group({
@@ -43,7 +46,7 @@ export class RegistrationComponent implements OnInit {
       name: [null, Validators.required],
       phoneNumber: [null, Validators.required],
       surname: [null, Validators.required],
-      password: [null, [Validators.required, Validators.pattern(this.passwordValidationPattern)]],
+      password: [null, [Validators.required, Validators.maxLength(6)]],
       confirmPassword: [null, Validators.required]
     }, {
       validators: CustomValidators.passwordsMatch
@@ -58,7 +61,11 @@ export class RegistrationComponent implements OnInit {
 
   register() {
     if (this.userFormGroup.valid) {
-      this.userService.registerUser(this.userFormGroup.value).subscribe();
+      this.userService.registerUser(this.userFormGroup.value).subscribe(() => {
+        this.userFormGroup.reset();
+        this.router.navigate(['']);
+        
+      });
     }
   }
 
