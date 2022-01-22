@@ -77,11 +77,11 @@ import { TermsComponent } from './components/terms/terms.component';
       useClass: AuthInterceptor,
       multi: true
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ErrorHandlerInterceptor,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: ErrorHandlerInterceptor,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })
