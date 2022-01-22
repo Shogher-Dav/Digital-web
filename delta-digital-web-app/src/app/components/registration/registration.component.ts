@@ -46,7 +46,7 @@ export class RegistrationComponent implements OnInit {
       name: [null, Validators.required],
       phoneNumber: [null, Validators.required],
       surname: [null, Validators.required],
-      password: [null, [Validators.required, Validators.maxLength(6)]],
+      password: [null, [Validators.required, Validators.minLength(6)]],
       confirmPassword: [null, Validators.required]
     }, {
       validators: CustomValidators.passwordsMatch

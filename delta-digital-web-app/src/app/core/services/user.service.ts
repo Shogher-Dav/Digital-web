@@ -36,7 +36,9 @@ export class UserService {
   }
 
   changeEmail(newEmail: string) {
-    return this.httpClient.put(`${this.baseUrl}/user/complete-email`, newEmail);
+    return this.httpClient.put(`${this.baseUrl}/user/complete-email`, {
+      newEmail
+    });
 
   }
 

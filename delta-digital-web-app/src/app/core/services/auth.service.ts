@@ -179,8 +179,7 @@ export class AuthService {
             this.saveIsAuthenticatedSessionStr('true');
             this.isAuthenticated = true;
           }
-        }),
-        // catchError(AuthService.handleError)
+        })
       );
   }
 

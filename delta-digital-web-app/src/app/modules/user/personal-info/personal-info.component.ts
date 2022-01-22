@@ -20,8 +20,8 @@ export class PersonalInfoComponent implements OnInit, OnDestroy {
     private userService: UserService) {
       
     this.personalInfo = this.fb.group({
-      userName: ['', Validators.required],
-      surname: ['', Validators.required],
+      userName: ['', [ Validators.required,  Validators.pattern('[-_a-zA-Z]*')] ],
+      surname: ['', [ Validators.required,  Validators.pattern('[-_a-zA-Z]*') ]],
       birthDate: ['', Validators.required]
     });
 

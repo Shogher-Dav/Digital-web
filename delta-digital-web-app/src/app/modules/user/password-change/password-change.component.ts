@@ -25,8 +25,8 @@ export class PasswordChangeComponent implements OnInit, OnDestroy {
     private userService: UserService,
     private fb: FormBuilder) {
     this.changePasswordGroup = this.fb.group({
-      newPassword: ['', [Validators.required, Validators.pattern(this.passwordValidationPattern)]],
-      password: ['', [Validators.required, Validators.pattern(this.passwordValidationPattern)]],
+      newPassword: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       repeatPassword: [null]
     });
 

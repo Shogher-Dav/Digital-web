@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -10,21 +10,24 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class EmailChangeComponent implements OnInit {
 
-  email = new FormControl('', { validators: Validators.required });
-
+  emailGroup: FormGroup;
   constructor(
     private router: Router,
-    private userService: UserService) { }
+    private userService: UserService,
+    private fb: FormBuilder) { 
+      this.emailGroup = this.fb.group({
+        email: ['', [ Validators.required, Validators.email ]]
+      });
+    }
 
   ngOnInit(): void {}
 
   changeEmail() {
 
-    this.userService.changeEmail(this.email.value).subscribe(res => {
+    this.userService.changeEmail(this.emailGroup.value.email).subscribe(res => {
       console.log(res);
     });
 
-    console.log(this.email.value);
 
   }
 

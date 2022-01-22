@@ -475,6 +475,7 @@ i {
   }
 }
 
+
 // :host ::ng-deep .header .nav-item {
 //   &:hover {
 //     border-bottom: 3px solid $white-text1;
@@ -496,51 +497,7 @@ i {
     }
   }
 
-
-  // :host ::ng-deep .triangle-container {
-  //   position: relative;
-  //   background: $dark-red;
-  //   box-shadow: 0 .1em 1em rgba(0, 0, 0, 0.1);
-  //   border-bottom-left-radius: 13px;
-  //   border-bottom-right-radius: 13px;
-  //   margin-top: -18px;
-  //   width: 4em;
-  //   height: 4em;
-  // }
-
-  // :host ::ng-deep .logo-traingle {
-  //   position: absolute;
-  //   width: 2em;
-  //   height: 2em;
-  //   clip: rect(2.6em, 6em, 7em, -3em);
-  //   top: 24%;
-  //   left: 27%;
-
-
-  //   &:before {
-  //     content: "";
-  //     display: block;
-  //     margin: -1em;
-  //     background: $dark-red;
-  //     box-shadow: 0.01em 0.01em 1em rgba(0, 0, 0, 0.1);
-  //     transform: scale(0.8, 1) rotate(45deg);
-  //     width: 4.35em;
-  //     height: 5.35em;
-
-  //   }
-  // }
-
-  // :host ::ng-deep .logo {
-  //   z-index: 100;
-  //   padding: 30px 17px;
-  // }
-
-  // :host ::ng-deep .header .header-logo {
-  //   img {
-  //     width: 100% !important;
-  //   }
-
-  // }
+ 
 
  :host ::ng-deep  .triangle-container {
     background-image: url("../../../assets/images/red-triangle.png");
@@ -578,6 +535,9 @@ i {
   background-color: white;
 }
 
+:host ::ng-deep .header .nav-second-part {
+  top: 20%;
+}
 /////////////////////////////////////////////////////
 
 

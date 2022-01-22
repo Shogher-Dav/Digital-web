@@ -36,7 +36,7 @@ export class MainComponent implements OnInit {
     private userService: UserService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.maxLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
 
   }
@@ -49,7 +49,12 @@ export class MainComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(res => {
-        location.reload();
+        console.log(res.error);
+
+        // location.reload();
+      },
+      err => {
+        this
       });
     }
 

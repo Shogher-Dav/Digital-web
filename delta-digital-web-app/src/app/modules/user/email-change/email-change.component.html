@@ -8,11 +8,20 @@
                 Ձեր Էլ․ Հասցեն
             </div>
             <div class="input-group">
-                <input type="email" class="form-control login-form-input email-input" [formControl]="email"
-                    placeholder="Էլ․ հասցե">
+                <form [formGroup] = "emailGroup">
+                <input type="email" class="form-control login-form-input email-input" formControlName ="email"
+                    placeholder="Էլ․ հասցե"
+                    [ngClass]="(emailGroup.get('email')?.touched || emailGroup.get('email')?.dirty)
+                    && ( emailGroup.get('email')?.hasError('required') 
+                    || emailGroup.get('email')?.hasError('email')) ? 'wrong-email' : '' ">
+                </form>
             </div>
             <div class="text-center">
-                <button (click)="changeEmail()" class="btn submit-btn btn-click-style">Հաստատել Էլ․ Հասցեն</button>
+                <button (click)="changeEmail()" class="btn submit-btn btn-click-style"
+                    [ngClass]="!emailGroup.valid ? 'disabled-btn' : 'btn-click-style'"
+                    [disabled]="!emailGroup.valid">
+                    Հաստատել Էլ․ Հասցեն
+                </button>
             </div>
         </div>
     </div>

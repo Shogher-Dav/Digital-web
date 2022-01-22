@@ -12,10 +12,16 @@
                 <span class="personal-info">Անձնական տվյալներ</span>
                 <form [formGroup]="personalInfo">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Անուն" formControlName="userName">
+                        <input type="text" class="form-control" placeholder="Անուն" formControlName="userName"
+                        [ngClass]="(personalInfo.get('userName')?.touched || personalInfo.get('userName')?.dirty)
+                        && ( personalInfo.get('userName')?.hasError('required') 
+                        || personalInfo.get('userName')?.hasError('pattern')) ? 'form-error' : '' ">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Ազգանուն" formControlName="surname">
+                        <input type="text" class="form-control" placeholder="Ազգանուն" formControlName="surname"
+                        [ngClass]="(personalInfo.get('surname')?.touched || personalInfo.get('surname')?.dirty)
+                        && ( personalInfo.get('surname')?.hasError('required') 
+                        || personalInfo.get('surname')?.hasError('pattern')) ? 'form-error' : '' ">
                     </div>
                     <div class="input-group">
                         <input class="form-control" #datepickerYMD="bsDatepicker" bsDatepicker
