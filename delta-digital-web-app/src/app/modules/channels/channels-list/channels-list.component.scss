@@ -24,6 +24,7 @@
   .channel-logo {
     width: 100%;
     min-width: 40px;
+    cursor: pointer;
   }
 
   &-item {
@@ -45,6 +46,7 @@
       @include adaptiv-font(23, 11);
       margin-bottom: 13px;
       margin-left: 23px;
+      cursor: pointer;
     }
 
     .favourite-icon {

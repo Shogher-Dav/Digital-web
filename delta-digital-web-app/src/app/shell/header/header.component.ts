@@ -1,10 +1,12 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MainComponent } from 'src/app/components/main/main.component';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { MainService } from 'src/app/core/services/main.service';
 import { ChannelsService } from 'src/app/core/services/channels.service'
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { IChannel } from 'src/app/core/interfaces/IChannel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -30,20 +32,23 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 export class HeaderComponent implements OnInit {
   navbarOpen = false;
   searchOpen = false;
-  searchText = new FormControl('');
+  searchTextGroup: FormGroup;
   isLoggedIn = false;
   showLogin$ = this.mainService.showLogin$;
-  @Output() public click: EventEmitter<MouseEvent> = new EventEmitter();
 
-  channelNames: string[] = [];
-
-  selected: string;
+  channels: IChannel[]
 
 
   constructor(
     private authService: AuthService,
     private mainService: MainService,
-    private channelsService: ChannelsService) { }
+    private channelsService: ChannelsService,
+    private fb: FormBuilder,
+    private router: Router) { 
+      this.searchTextGroup = this.fb.group({
+        searchText: [null]
+      });
+    }
 
   ngOnInit(): void {
     this.setIsAuthenticated();
@@ -57,19 +62,17 @@ export class HeaderComponent implements OnInit {
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
+
   toggleSearch(event: any) {
     this.searchOpen = !this.searchOpen;
     this.channelsService.searchChannelsName('a').subscribe(res => {
-      res.content.map(x => this.channelNames.push(x.name));
-      console.log(res);
+      this.channels = res.content;
     });
-    console.log(this.channelNames)
+    
     if(this.isLoggedIn){
       // this.channelsService.getChannels();
-
     }
 
-    console.log(this.searchText.value)
 
   }
 
@@ -89,6 +92,11 @@ export class HeaderComponent implements OnInit {
       }
     }
 
+  }
+
+  onSelect(event: any){
+    const channel = event.item;
+    this.router.navigate(['channel', channel.id]);
   }
 
 }

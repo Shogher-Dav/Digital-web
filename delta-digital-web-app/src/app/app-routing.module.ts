@@ -5,6 +5,7 @@ import { PackageComponent } from './components/package/package.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { TermsComponent } from './components/terms/terms.component';
 import { AuthGuard } from './core/services/auth.guard';
+import { ChannelComponent } from './modules/channels/channel/channel.component';
 import { GalleryComponent } from './modules/gallery/gallery.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'package', component: PackageComponent },
   { path: 'terms', component: TermsComponent },
+  { path: 'channel/:id', component: ChannelComponent },
   {
     path: 'channels',
     loadChildren: () => import('./modules/channels/channels.module').then(m => m.ChannelsModule),

@@ -12,7 +12,7 @@
                 <div class="col-9">
                     <div class="d-flex justify-content-between">
                         <div class="channel-name">
-                            <span>{{channel.name}}</span>
+                            <span [routerLink]="['channel', channel.id]">{{channel.name}}</span>
                         </div>
                         <div class="favourite-icon">
                             <i *ngIf="!channel.favorite" class="far fa-heart" (click)="changeFavourite(channel)"></i>

@@ -49,12 +49,10 @@ export class MainComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(res => {
-        console.log(res.error);
-
-        // location.reload();
+        location.reload();
       },
       err => {
-        this
+        // this
       });
     }
 

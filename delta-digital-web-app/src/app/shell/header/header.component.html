@@ -40,9 +40,13 @@
             </div>
             <div  *ngIf="isLoggedIn" class="nav-second-part d-flex align-items-center">
 
-                <div [@showState]="stateName">
+                <div [formGroup]= "searchTextGroup" [@showState]="stateName">
                     <input class="searchbox__input form-control input-group-lg" [ngClass]="{ 'red-input': !searchOpen }"
-                        placeholder="Search..." [typeahead]="channelNames" [(ngModel)]="selected" [isAnimated]="true" />
+                        placeholder="Search..." [typeahead]="channels"  [isAnimated]="true"
+                        typeaheadOptionField="name"
+                        formControlName="searchText"
+                        (typeaheadOnSelect)="onSelect($event)"
+                    />
                 </div>
                 <i class="fas fa-search searchbox__icon" (click)="toggleSearch($event)"></i>
                 <button routerLink="/profile/main" class="btn  my-2 my-sm-0 header-profile-btn" type="submit">Իմ
