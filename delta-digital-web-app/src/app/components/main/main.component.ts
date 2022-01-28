@@ -15,7 +15,7 @@ import { UserService } from 'src/app/core/services/user.service';
 export class MainComponent implements OnInit {
 
   // searchText = new FormControl('');
-  isChecked = false;
+  isChecked = true;
   showPassword = false;
 
   isAuthenticated: any;
