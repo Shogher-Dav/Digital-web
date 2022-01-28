@@ -1,79 +1,110 @@
 <app-header></app-header>
 <div class="contact">
-    <div class="contact-container row justify-content-around">
-        <div class="contact-message-content col-lg-5">
-            <div class="title">
-                <span class="title-part1">Կապնվիր</span>
-                <span class="title-part2">մեզ հետ</span>
-                <hr class="led-line">
-            </div>
-            <form [formGroup]="contactGroup" class="contact-form">
-                <div class="form-group">
-                    <input class="form-control form-control-lg" type="text" placeholder="Անուն">
-                </div>
-                <div class="form-group">
-                    <input formControlName="appEmail" type="text" placeholder="Էլ․ հասցե"
-                        class="form-control form-control-lg">
-                </div>
-                <div class="form-group">
-                    <input formControlName="title" type="text" placeholder="Թեմա" class="form-control form-control-lg">
-                </div>
-                <div class="form-group">
-                    <textarea formControlName="description" type="text" placeholder="Հաղորդագրություն"
-                        class="form-control form-control-lg" rows="5"></textarea>
-                </div>
-            </form>
-            <button (click)="contact()" class="btn contact-btn">Հաստատել</button>
+  <div class="contact-container row justify-content-around">
+    <div class="contact-message-content col-lg-5">
+      <div class="title">
+        <span class="title-part1">Կապնվիր</span>
+        <span class="title-part2">մեզ հետ</span>
+        <hr class="led-line" />
+      </div>
+      <form [formGroup]="contactGroup" class="contact-form">
+        <div class="form-group">
+          <input
+            class="form-control form-control-lg"
+            type="text"
+            placeholder="Անուն"
+          />
         </div>
-        <div class="contact-info col-lg-5  d-flex flex-column align-items-center">
-            <div class="contact-info-text ">
-                <span class="contact-info-text-title">
-                    Հետադարձ կապ
-                </span>
-                <div>
-                    <div class="d-flex">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Կենտրոնական գրասենյակ Հասցե` Շիրակի մարզ, <br />
-                            Ք. Գյումրի, Տիգրան Մեծ 2</span>
-                    </div>
-                    <div class="email d-flex">
-                        <i class="fas fa-envelope"></i>
-                        <span>Էլ փոստ։ info@deltatelecom.am</span>
-                    </div>
-                    <div class="d-flex">
-                        <i class="fas fa-mobile-alt"></i>
-                        <span>Հեռ : </span>
-                        <span> 0312 3֊00֊00 <br /> 094 95-06-04</span>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-info-img">
-                <img src="../../../assets/images/Contact/Сгруппировать 1901.png" alt="">
-            </div>
+        <div class="form-group">
+          <input
+            formControlName="appEmail"
+            type="text"
+            placeholder="Էլ․ հասցե"
+            class="form-control form-control-lg"
+            [ngClass]="(contactGroup.get('appEmail')?.touched || contactGroup.get('appEmail')?.dirty)
+            && ( contactGroup.get('appEmail')?.hasError('required') 
+            || contactGroup.get('appEmail')?.hasError('email')) ? 'form-error' : '' "
+          />
         </div>
+        <div class="form-group">
+          <input
+            formControlName="title"
+            type="text"
+            placeholder="Թեմա"
+            class="form-control form-control-lg"
+            [ngClass]="(contactGroup.get('title')?.touched || contactGroup.get('title')?.dirty)
+            && ( contactGroup.get('title')?.hasError('required')) ? 'form-error' : '' "
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            formControlName="description"
+            type="text"
+            placeholder="Հաղորդագրություն"
+            class="form-control form-control-lg"
+            rows="5"
+            [ngClass]="(contactGroup.get('description')?.touched || contactGroup.get('description')?.dirty)
+            && ( contactGroup.get('description')?.hasError('required')) ? 'form-error' : '' "
+          ></textarea>
+        </div>
+      </form>
+      <button
+       [ngClass]="!contactGroup.valid ? 'disabled-btn' : 'btn-click-style'"
+       [disabled]="!contactGroup.valid" 
+       (click)="contact()" 
+       class="btn contact-btn">
+       Հաստատել
+    </button>
     </div>
-
-    <div class="map-container d-flex">
-
-        <div class=" phone-container col-4">
-            <div class="center">
-
-
-                <div class="d-flex align-items-center first-phone">
-                    <i class="fas fa-phone-square"></i>
-                    <span>094 554 553</span>
-
-                </div>
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-phone-square"></i>
-                    <span>094 554 553</span>
-                </div>
-            </div>
+    <div class="contact-info col-lg-5 d-flex flex-column align-items-center">
+      <div class="contact-info-text">
+        <span class="contact-info-text-title"> Հետադարձ կապ </span>
+        <div>
+          <div class="d-flex">
+            <i class="fas fa-map-marker-alt"></i>
+            <span
+              >Կենտրոնական գրասենյակ Հասցե` Շիրակի մարզ, <br />
+              Ք. Գյումրի, Տիգրան Մեծ 2</span
+            >
+          </div>
+          <div class="email d-flex">
+            <i class="fas fa-envelope"></i>
+            <span>Էլ փոստ։ info@deltatelecom.am</span>
+          </div>
+          <div class="d-flex">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Հեռ : </span>
+            <span>
+              0312 3֊00֊00 <br />
+              094 95-06-04</span
+            >
+          </div>
         </div>
-        <div class="map-frame col-8">
-            <div id="map"></div>
-        </div>
+      </div>
+      <div class="contact-info-img">
+        <img
+          src="../../../assets/images/Contact/Сгруппировать 1901.png"
+          alt=""
+        />
+      </div>
     </div>
+  </div>
 
-
+  <div class="map-container d-flex">
+    <div class="phone-container col-4">
+      <div class="center">
+        <div class="d-flex align-items-center first-phone">
+          <i class="fas fa-phone-square"></i>
+          <span>094 554 553</span>
+        </div>
+        <div class="d-flex align-items-center">
+          <i class="fas fa-phone-square"></i>
+          <span>094 554 553</span>
+        </div>
+      </div>
+    </div>
+    <div class="map-frame col-8">
+      <div id="map"></div>
+    </div>
+  </div>
 </div>

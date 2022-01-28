@@ -115,6 +115,16 @@
       }
     }
   }
+
+  .disabled-btn {
+    opacity: .45;
+    cursor: not-allowed;
+  }
+
+  .form-error {
+    border: 1px solid red;
+  }
+
 }
 
 :host ::ng-deep .header {
@@ -180,8 +190,6 @@
       left: 12%;
     }
   }
-
-
 }
 
 

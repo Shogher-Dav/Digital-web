@@ -32,8 +32,10 @@
                             [attr.aria-expanded]="datepickerYMD.isOpen">
                         </i>
                     </div>
-                    <button [ngClass]="!personalInfo.valid ? 'disabled-btn' : 'btn-click-style'"
-                        [disabled]="!personalInfo.valid" class="btn submit-btn"
+                    <button 
+                        [ngClass]="!personalInfo.valid ? 'disabled-btn' : 'btn-click-style'"
+                        [disabled]="!personalInfo.valid" 
+                        class="btn submit-btn"
                         (click)="updateCurrentUser()">Հաստատել</button>
                 </form>
             </div>

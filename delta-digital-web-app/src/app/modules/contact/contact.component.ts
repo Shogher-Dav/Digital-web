@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as L from 'leaflet';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { MessageModalComponent } from 'src/app/core/modals/error-modal/message-modal.component';
 import { MainService } from 'src/app/core/services/main.service';
 
 @Component({
@@ -14,6 +16,8 @@ export class ContactComponent implements OnInit, OnDestroy {
 
   contactGroup: FormGroup;
   private unsubscribe$ = new Subject<void>();
+  bsModalRef: BsModalRef;
+
 
   private map: L.Map;
   private coord: L.LatLngExpression = [40.19997139643391, 44.498658829421785]; // Yerevan Hrachya Qochar poxoc
@@ -36,20 +40,17 @@ export class ContactComponent implements OnInit, OnDestroy {
         });
 
     L.marker(this.coord, { icon: myIcon }).addTo(this.map);
-
-
     tiles.addTo(this.map);
-
   }
-
-
 
   constructor(
     private fb: FormBuilder,
-    private mainService: MainService) {
+    private mainService: MainService,
+    private modalService: BsModalService,
+    ) {
 
     this.contactGroup = this.fb.group({
-      appEmail: ['', Validators.required],
+      appEmail: ['', [Validators.required, Validators.email]],
       appPhone: [''],
       description: ['', Validators.required],
       facebook: [''],
@@ -58,10 +59,6 @@ export class ContactComponent implements OnInit, OnDestroy {
       twitter: [''],
       whatsApp: ['']
     });
-
-    this.contactGroup.valueChanges.subscribe(res => {
-      console.log(res);
-    })
   }
 
   ngOnInit(): void {
@@ -70,24 +67,26 @@ export class ContactComponent implements OnInit, OnDestroy {
 
 
   contact() {
-    const msg = {
-      appEmail: "shogh.dav@gmail.com",
-      appPhone: "",
-      description: "harcer",
-      facebook: "",
-      instagram: "",
-      title: "Harc",
-      twitter: "",
-      whatsApp: ""
+    if(this.contactGroup.valid) {
+      this.mainService.contactUs(this.contactGroup.value).pipe(
+        takeUntil(this.unsubscribe$)
+      ).subscribe(
+        res =>  {
+          this.showYourModal('Հաղորթագրությունը հաջողությամբ ուղարկվել է, մենք շուտով կապ կհաստատենք ձեր հետ', 'success');
+        },
+        err => this.showYourModal('Հաղորթագրությունը չի ուղարկվել, խնդրում ենք փորձել կրկին', 'error'),
+      )
     }
-
-    console.log(this.contactGroup.value);
-    this.mainService.contactUs(this.contactGroup.value).pipe(
-      takeUntil(this.unsubscribe$)
-    ).subscribe(res => {
-      console.log(res);
-    })
   }
+
+  showYourModal(message:string, type: string) {
+    const initialState = {
+        message,
+        type
+    };
+    this.bsModalRef = this.modalService.show(MessageModalComponent, {initialState});
+    this.bsModalRef.content.closeBtnName = 'Close';
+}
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
