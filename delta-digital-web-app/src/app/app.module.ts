@@ -38,6 +38,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { ErrorHandlerInterceptor } from './core/interceptors/error-handler.interceptor';
 import { GalleryModule } from './modules/gallery/gallery.module';
 import { TermsComponent } from './components/terms/terms.component';
+import { MessageModalComponent } from './core/modals/error-modal/message-modal.component';
 
 
 
@@ -49,6 +50,7 @@ import { TermsComponent } from './components/terms/terms.component';
     RegistrationComponent,
     PackageComponent,
     TermsComponent,
+    MessageModalComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +70,7 @@ import { TermsComponent } from './components/terms/terms.component';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     GalleryModule,
+
     
 
   ],

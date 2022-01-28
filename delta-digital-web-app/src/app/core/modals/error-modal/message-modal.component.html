@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <div *ngIf = "type === 'error'">
+    <h5 class="modal-title pull-left">
+      <i class="fas fa-exclamation-triangle"></i>
+      Error
+    </h5>
+  </div>
+  <div *ngIf = "type === 'success'">
+    <h4 class="modal-title pull-left">
+      <i class="fas fa-check-circle"></i>
+      Success
+    </h4>
+  </div>
+  <button
+    type="button"
+    class="btn-close close pull-right"
+    aria-label="Close"
+    (click)="close()"
+  >
+    <span aria-hidden="true" class="visually-hidden">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  {{ message }}
+</div>

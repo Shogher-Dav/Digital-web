@@ -32,7 +32,6 @@ export class ProfileMainConfigComponent implements OnInit, OnDestroy {
     })
 
   }
-
   openDevice(bool: string) {
     // this.isInDevice =  !this.isInDevice;
     this.isInDevice.emit(bool);

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
 import { HeaderModule } from 'src/app/shell/header/header.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { HeaderModule } from 'src/app/shell/header/header.module';
     CommonModule,
     ContactRoutingModule,
     HeaderModule,
+    ReactiveFormsModule
 
   ]
 })

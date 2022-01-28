@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Observable, Subscription } from 'rxjs';
 import { IAbout } from 'src/app/core/interfaces/IAbout';
 import { MainService } from 'src/app/core/services/main.service';
@@ -13,7 +14,10 @@ export class AboutUsComponent implements OnInit, OnDestroy {
   about = new IAbout();
   subS: Subscription;
 
-  constructor(private mainService: MainService) { }
+
+  constructor(
+    private mainService: MainService,
+    ) { }
 
   ngOnInit(): void {
     this.mainService.showLogin$.next(true);
@@ -26,6 +30,4 @@ export class AboutUsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subS.unsubscribe();
   }
-
-
 }

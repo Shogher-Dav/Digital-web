@@ -4,9 +4,6 @@ import { AboutUsComponent } from './about-us.component';
 import { HeaderModule } from 'src/app/shell/header/header.module';
 import { AboutUsRoutingModule } from './about-us-routing.module';
 
-
-
-
 @NgModule({
   declarations: [
     AboutUsComponent
@@ -15,7 +12,7 @@ import { AboutUsRoutingModule } from './about-us-routing.module';
   imports: [
     CommonModule,
     HeaderModule,
-    AboutUsRoutingModule
+    AboutUsRoutingModule,
   ]
 })
 export class AboutUsModule { }

@@ -47,6 +47,7 @@ export class ContactComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private mainService: MainService) {
+
     this.contactGroup = this.fb.group({
       appEmail: ['', Validators.required],
       appPhone: [''],
@@ -57,12 +58,14 @@ export class ContactComponent implements OnInit, OnDestroy {
       twitter: [''],
       whatsApp: ['']
     });
+
+    this.contactGroup.valueChanges.subscribe(res => {
+      console.log(res);
+    })
   }
 
   ngOnInit(): void {
     this.initMap();
-
-
   }
 
 
@@ -77,7 +80,9 @@ export class ContactComponent implements OnInit, OnDestroy {
       twitter: "",
       whatsApp: ""
     }
-    this.mainService.contactUs(msg).pipe(
+
+    console.log(this.contactGroup.value);
+    this.mainService.contactUs(this.contactGroup.value).pipe(
       takeUntil(this.unsubscribe$)
     ).subscribe(res => {
       console.log(res);
